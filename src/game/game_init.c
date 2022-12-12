@@ -31,6 +31,9 @@
 #include "debug_box.h"
 #include "vc_check.h"
 #include "profiling.h"
+#ifdef REONUCAM
+#include "camera.h"
+#endif
 
 // First 3 controller slots
 struct Controller gControllers[3];
@@ -772,6 +775,9 @@ void thread5_game_loop(UNUSED void *arg) {
 
     play_music(SEQ_PLAYER_SFX, SEQUENCE_ARGS(0, SEQ_SOUND_PLAYER), 0);
     set_sound_mode(save_file_get_sound_mode());
+#ifdef REONUCAM
+    gReonucamState.speed = save_file_get_camera_speed();
+#endif
 #ifdef WIDE
     gConfig.widescreen = save_file_get_widescreen_mode();
 #endif
@@ -797,7 +803,6 @@ void thread5_game_loop(UNUSED void *arg) {
         audio_game_loop_tick();
         select_gfx_pool();
         read_controller_inputs(THREAD_5_GAME_LOOP);
-        profiler_update(PROFILER_TIME_CONTROLLERS);
         addr = level_script_execute(addr);
 #if !PUPPYPRINT_DEBUG && defined(VISUAL_DEBUG)
         debug_box_input();

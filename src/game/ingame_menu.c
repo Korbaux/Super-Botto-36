@@ -63,6 +63,14 @@ void *languageTable[][3] = {
 #endif
 };
 
+#ifdef REONUCAM
+u8 textCamInfoSlowest[] = { TEXT_CAM_INFO_SLOWEST };
+u8 textCamInfoSlow[] = { TEXT_CAM_INFO_SLOW };
+u8 textCamInfoMedium[] = { TEXT_CAM_INFO_MEDIUM };
+u8 textCamInfoFast[] = { TEXT_CAM_INFO_FAST};
+u8 textCamInfoFastest[] = { TEXT_CAM_INFO_FASTEST };
+#endif
+
 extern u8 gLastCompletedCourseNum;
 extern u8 gLastCompletedStarNum;
 
@@ -762,14 +770,14 @@ void render_dialog_box_type(struct DialogEntry *dialog, s8 linesPerBox) {
                 // convert the speed into angle
                 create_dl_rotation_matrix(MENU_MTX_NOPUSH, (gDialogBoxOpenTimer * 4.0f), 0, 0, 1.0f);
             }
-            gDPSetEnvColor(gDisplayListHead++, 0, 0, 0, 150);
+            gDPSetEnvColor(gDisplayListHead++, 150, 0, 150, 150);
             break;
         case DIALOG_TYPE_ZOOM: // Renders a dialog white box with zoom
             if (gDialogBoxState == DIALOG_STATE_OPENING || gDialogBoxState == DIALOG_STATE_CLOSING) {
                 create_dl_translation_matrix(MENU_MTX_NOPUSH, (65.0f - (65.0f / gDialogBoxScale)), ((40.0f / gDialogBoxScale) - 40), 0);
                 create_dl_scale_matrix(MENU_MTX_NOPUSH, (1.0f / gDialogBoxScale), (1.0f / gDialogBoxScale), 1.0f);
             }
-            gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, 150);
+            gDPSetEnvColor(gDisplayListHead++, 255, 150, 255, 150);
             break;
     }
 
@@ -1223,13 +1231,13 @@ void render_dialog_entries(void) {
 
     gDPSetScissor(gDisplayListHead++, G_SC_NON_INTERLACE,
                   // Horizontal scissoring isn't really required and can potentially mess up widescreen enhancements.
-#ifdef WIDESCREEN
+#ifdef WIDE
                   0,
 #else
                   ensure_nonnegative(dialog->leftOffset),
 #endif
                   ensure_nonnegative(DIAG_VAL2 - dialog->width),
-#ifdef WIDESCREEN
+#ifdef WIDE
                   SCREEN_WIDTH,
 #else
                   ensure_nonnegative(DIAG_VAL3 + dialog->leftOffset),
@@ -1459,6 +1467,48 @@ void reset_red_coins_collected(void) {
     gRedCoinsCollected = 0;
 }
 
+#ifdef REONUCAM
+void render_reonucam_speed_setting(void) {
+    gSPDisplayList(gDisplayListHead++, dl_ia_text_begin);
+    gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, gDialogTextAlpha);
+    switch (gReonucamState.speed) {
+        case 0:
+            print_generic_string(190, 20, textCamInfoSlowest);
+            break;
+        case 1:
+            print_generic_string(190, 20, textCamInfoSlow);
+            break;
+        case 2:
+            print_generic_string(190, 20, textCamInfoMedium);
+            break;
+        case 3:
+            print_generic_string(190, 20, textCamInfoFast);
+            break;
+        case 4:
+            print_generic_string(190, 20, textCamInfoFastest);
+            break;
+    }
+    gSPDisplayList(gDisplayListHead++, dl_ia_text_end);
+
+    if (gPlayer1Controller->buttonPressed & R_JPAD) {
+        if (gReonucamState.speed < 4) {
+            gReonucamState.speed += 1;
+        } else {
+            gReonucamState.speed = 0;
+        }
+        save_file_set_camera_speed(gReonucamState.speed);
+    } else if (gPlayer1Controller->buttonPressed & L_JPAD) {
+        if (gReonucamState.speed > 0) {
+            gReonucamState.speed -= 1;
+        } else {
+            gReonucamState.speed = 4;
+        }
+        save_file_set_camera_speed(gReonucamState.speed);
+    }
+}
+#endif
+
+
 void change_dialog_camera_angle(void) {
     if (cam_select_alt_mode(0) == CAM_SELECTION_MARIO) {
         gDialogCameraAngleIndex = CAM_SELECTION_MARIO;
@@ -1472,7 +1522,7 @@ void shade_screen(void) {
 
     // This is a bit weird. It reuses the dialog text box (width 130, height -80),
     // so scale to at least fit the screen.
-#ifdef WIDESCREEN
+#ifdef WIDE
     create_dl_scale_matrix(MENU_MTX_NOPUSH,
                            GFX_DIMENSIONS_ASPECT_RATIO * SCREEN_HEIGHT / 130.0f, 3.0f, 1.0f);
 #else
@@ -1494,13 +1544,13 @@ void print_animated_red_coin(s16 x, s16 y) {
 #ifdef IA8_30FPS_COINS
     switch (globalTimer & 0x7) {
         case 0: gSPDisplayList(gDisplayListHead++, coin_seg3_dl_red_0     ); break;
-        case 1: gSPDisplayList(gDisplayListHead++, coin_seg3_dl_red_22_5  ); break;
-        case 2: gSPDisplayList(gDisplayListHead++, coin_seg3_dl_red_45    ); break;
-        case 3: gSPDisplayList(gDisplayListHead++, coin_seg3_dl_red_67_5  ); break;
-        case 4: gSPDisplayList(gDisplayListHead++, coin_seg3_dl_red_90    ); break;
-        case 5: gSPDisplayList(gDisplayListHead++, coin_seg3_dl_red_67_5_r); break;
-        case 6: gSPDisplayList(gDisplayListHead++, coin_seg3_dl_red_45_r  ); break;
-        case 7: gSPDisplayList(gDisplayListHead++, coin_seg3_dl_red_22_5_r); break;
+        case 1: gSPDisplayList(gDisplayListHead++, coin_seg3_dl_red_1  ); break;
+        case 2: gSPDisplayList(gDisplayListHead++, coin_seg3_dl_red_2    ); break;
+        case 3: gSPDisplayList(gDisplayListHead++, coin_seg3_dl_red_3  ); break;
+        case 4: gSPDisplayList(gDisplayListHead++, coin_seg3_dl_red_4    ); break;
+        case 5: gSPDisplayList(gDisplayListHead++, coin_seg3_dl_red_5); break;
+        case 6: gSPDisplayList(gDisplayListHead++, coin_seg3_dl_red_6  ); break;
+        case 7: gSPDisplayList(gDisplayListHead++, coin_seg3_dl_red_7); break;
     }
 #else
     switch (globalTimer & 0x6) {
@@ -1921,6 +1971,9 @@ s32 render_pause_courses_and_castle(void) {
     }
 #if defined(WIDE) && !defined(PUPPYCAM)
         render_widescreen_setting();
+#endif
+#ifdef REONUCAM
+        render_reonucam_speed_setting();
 #endif
     if (gDialogTextAlpha < 250) {
         gDialogTextAlpha += 25;

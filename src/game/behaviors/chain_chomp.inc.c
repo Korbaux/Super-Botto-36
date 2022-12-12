@@ -464,7 +464,7 @@ void bhv_wooden_post_update(void) {
             // coins
             o->oWoodenPostTotalMarioAngle += (s16)(o->oAngleToMario - o->oWoodenPostPrevAngleToMario);
             if (absi(o->oWoodenPostTotalMarioAngle) > 0x30000 && o->oTimer < 200) {
-                obj_spawn_loot_yellow_coins(o, 5, 20.0f);
+                obj_spawn_loot_blue_coins(o, 10, 20.0f,0.f);
                 set_object_respawn_info_bits(o, RESPAWN_INFO_TYPE_NORMAL);
             }
         }

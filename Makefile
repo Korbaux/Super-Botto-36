@@ -55,7 +55,7 @@ $(eval $(call validate-option,LIBGCCDIR,trap divbreak nocheck))
 #   eep4k - uses EEPROM 4kbit
 #   eep16k - uses EEPROM 16kbit (There aren't any differences in syntax, but this is provided just in case)
 #   sram - uses SRAM 256Kbit
-SAVETYPE ?= eep4k
+SAVETYPE ?= sram
 $(eval $(call validate-option,SAVETYPE,eep4k eep16k sram))
 ifeq ($(SAVETYPE),eep4k)
   DEFINES += EEP=1 EEP4K=1
@@ -118,7 +118,7 @@ LIBRARIES := nustd hvqm2 z goddard
 
 # TEXT ENGINES
 #   s2dex_text_engine - Text Engine by someone2639
-TEXT_ENGINE := none
+TEXT_ENGINE := s2dex_text_engine
 ifeq ($(TEXT_ENGINE), s2dex_text_engine)
   DEFINES += S2DEX_GBI_2=1 S2DEX_TEXT_ENGINE=1
   LIBRARIES += s2d_engine
@@ -525,7 +525,7 @@ else
   RSPASM              := $(TOOLS_DIR)/armips
 endif
 ENDIAN_BITWIDTH       := $(BUILD_DIR)/endian-and-bitwidth
-EMULATOR = mupen64plus
+EMULATOR = parallel-launcher
 EMU_FLAGS =
 LOADER = loader64
 LOADER_FLAGS = -vwf

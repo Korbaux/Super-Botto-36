@@ -676,14 +676,14 @@ s32 save_file_get_cap_pos(Vec3s capPos) {
 }
 
 #ifdef SAVE_NUM_LIVES
-void save_file_set_num_lives(s8 numLives) {
+void save_file_set_num_lives(u16 numLives) {
     struct SaveFile *saveFile = &gSaveBuffer.files[gCurrSaveFileNum - 1][0];
     saveFile->numLives = numLives;
     saveFile->flags |= SAVE_FLAG_FILE_EXISTS;
     gSaveFileModified = TRUE;
 }
 
-s32 save_file_get_num_lives(void) {
+u16 save_file_get_num_lives(void) {
     struct SaveFile *saveFile = &gSaveBuffer.files[gCurrSaveFileNum - 1][0];
     return saveFile->numLives;
 }
@@ -713,6 +713,19 @@ void save_file_set_widescreen_mode(u8 mode) {
 u32 save_file_get_sound_mode(void) {
     return gSaveBuffer.menuData.soundMode;
 }
+
+#ifdef REONUCAM
+void save_file_set_camera_speed(u8 speed) {
+    gSaveBuffer.menuData.cameraSpeedSetting = speed;
+    gMainMenuDataModified = TRUE;
+    save_main_menu_data();
+}
+
+u8 save_file_get_camera_speed(void) {
+    return gSaveBuffer.menuData.cameraSpeedSetting;
+}
+
+#endif
 
 void save_file_move_cap_to_default_location(void) {
     if (save_file_get_flags() & SAVE_FLAG_CAP_ON_GROUND) {

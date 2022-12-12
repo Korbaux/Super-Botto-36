@@ -104,16 +104,17 @@ s32 check_common_hold_idle_cancels(struct MarioState *m) {
 
 //! TODO: actionArg names
 s32 act_idle(struct MarioState *m) {
+    int oldActionTimer;
+    if (m->actionTimer != oldActionTimer) {
+        m->health += 1;
+    }
+
     if (m->quicksandDepth > 30.0f) {
         return set_mario_action(m, ACT_IN_QUICKSAND, 0);
     }
 
     if (m->input & INPUT_IN_POISON_GAS) {
         return set_mario_action(m, ACT_COUGHING, 0);
-    }
-
-    if (!(m->actionArg & 1) && m->health < 0x300) {
-        return set_mario_action(m, ACT_PANTING, 0);
     }
 
     if (check_common_idle_cancels(m)) {
@@ -157,26 +158,15 @@ s32 act_idle(struct MarioState *m) {
             // 10 cycles before sleeping.
             // actionTimer is used to track how many cycles have passed.
             if (++m->actionState == ACT_STATE_IDLE_RESET_OR_SLEEP) {
-#ifdef NO_SLEEP
                 m->actionState = ACT_STATE_IDLE_HEAD_LEFT;
-#else
-                f32 deltaYOfFloorBehindMario = m->pos[1] - find_floor_height_relative_polar(m, -0x8000, 60.0f);
-                if (deltaYOfFloorBehindMario < -24.0f || 24.0f < deltaYOfFloorBehindMario || m->floor->flags & SURFACE_FLAG_DYNAMIC) {
-                    m->actionState = ACT_STATE_IDLE_HEAD_LEFT;
-                } else {
-                    // If Mario hasn't turned his head 10 times yet, stay idle instead of going to sleep.
-                    m->actionTimer++;
-                    if (m->actionTimer < 10) {
-                        m->actionState = ACT_STATE_IDLE_HEAD_LEFT;
-                    }
-                }
-#endif
             }
+
         }
     }
 
     stationary_ground_step(m);
-
+    oldActionTimer = m->actionTimer;
+     m->actionTimer++;
     return FALSE;
 }
 
@@ -187,6 +177,7 @@ void play_anim_sound(struct MarioState *m, u32 actionState, s32 animFrame, u32 s
 }
 
 s32 act_start_sleeping(struct MarioState *m) {
+    m->health += 1;
     s32 animFrame = 0;
 
     if (check_common_idle_cancels(m)) {
@@ -413,6 +404,10 @@ s32 act_coughing(struct MarioState *m) {
 }
 
 s32 act_hold_idle(struct MarioState *m) {
+    int oldActionTimer;
+    if (m->actionTimer != oldActionTimer) {
+        m->health += 1;
+    }
     if (segmented_to_virtual(&bhvJumpingBox) == m->heldObj->behavior) {
         return set_mario_action(m, ACT_CRAZY_BOX_BOUNCE, 0);
     }
@@ -435,6 +430,10 @@ s32 act_hold_idle(struct MarioState *m) {
 }
 
 s32 act_hold_heavy_idle(struct MarioState *m) {
+    int oldActionTimer;
+    if (m->actionTimer != oldActionTimer) {
+        m->health += 1;
+    }
     if (m->input & INPUT_STOMPED) {
         return drop_and_set_mario_action(m, ACT_SHOCKWAVE_BOUNCE, 0);
     }
@@ -457,10 +456,16 @@ s32 act_hold_heavy_idle(struct MarioState *m) {
 
     stationary_ground_step(m);
     set_mario_animation(m, MARIO_ANIM_IDLE_HEAVY_OBJ);
+    oldActionTimer = m->actionTimer;
     return FALSE;
 }
 
 s32 act_standing_against_wall(struct MarioState *m) {
+    int oldActionTimer;
+    if (m->actionTimer != oldActionTimer) {
+        m->health += 1;
+    }
+
     if (m->input & INPUT_STOMPED) {
         return set_mario_action(m, ACT_SHOCKWAVE_BOUNCE, 0);
     }
@@ -540,6 +545,10 @@ s32 act_crouching(struct MarioState *m) {
 }
 
 s32 act_panting(struct MarioState *m) {
+    int oldActionTimer;
+    if (m->actionTimer != oldActionTimer) {
+        m->health += 1;
+    }
     if (m->input & INPUT_STOMPED) {
         return set_mario_action(m, ACT_SHOCKWAVE_BOUNCE, 0);
     }

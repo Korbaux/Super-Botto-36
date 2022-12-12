@@ -11,7 +11,7 @@
 #define INTRO_CREDIT
 
 // Spawns floombas on the title screen.
-#define INTRO_FLOOMBAS
+// #define INTRO_FLOOMBAS
 
 // Enables widescreen (16:9) support.
 #define WIDE
@@ -52,13 +52,13 @@
  * Also, this also disables anti-aliasing on Mario.
  * NOTE: Regarding performance, silhouette seems to lose 1-2 frames on console.
  */
-// #define SILHOUETTE 127
+ #define SILHOUETTE 127
 
 // Use 64x64 quarter shadow textures (Vanilla are 16x16).
 #define HD_SHADOWS
 
 // Makes certain objects (mainly trees) transparent when the camera gets close.
-// #define OBJ_OPACITY_BY_CAM_DIST
+ #define OBJ_OPACITY_BY_CAM_DIST
 
 // Fixes the game reading the ia8 burn smoke texture as an rgba16.
 #define BURN_SMOKE_FIX
@@ -68,7 +68,7 @@
 
 // Uses the star object's model in the star dance cutscene.
 // This has a side effect of making the star dance star also transparent when Mario collects a transparent star.
-// #define STAR_DANCE_USES_STARS_MODEL
+#define STAR_DANCE_USES_STARS_MODEL
 
 // Lightweight directional lighting engine by Fazana. Intended for giving proximity and positional pointlights to small objects.
 // NOTE: Still breaks occasionally, and PUPPYLIGHT_NODE might not work in areas that aren't area 1.

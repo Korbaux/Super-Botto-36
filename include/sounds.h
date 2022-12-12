@@ -164,7 +164,7 @@ enum SoundBank {
 #define SOUND_ACTION_UNK5D                       /* 0x005D0000 */ SOUND_ARG_LOAD(SOUND_BANK_ACTION,   0x5D, 0x00, 0) // unverified, unused
 #define SOUND_ACTION_INTRO_UNK45E                /* 0x045E8080 */ SOUND_ARG_LOAD(SOUND_BANK_ACTION,   0x5E, 0x80, SOUND_NO_PRIORITY_LOSS | SOUND_DISCRETE) // unverified
 #define SOUND_ACTION_INTRO_UNK45F                /* 0x045F8080 */ SOUND_ARG_LOAD(SOUND_BANK_ACTION,   0x5F, 0x80, SOUND_NO_PRIORITY_LOSS | SOUND_DISCRETE) // unverified
-
+#define SOUND_MARIO_CRASH_SCREEN                                  SOUND_ARG_LOAD(SOUND_BANK_ACTION,   0x60, 0x80, 8)
 /* Moving Sound Effects */
 
 // Terrain-dependent moving sounds; a value 0-7 is added to the sound ID before

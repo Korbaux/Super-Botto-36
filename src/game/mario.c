@@ -842,6 +842,11 @@ u32 set_mario_action_airborne(struct MarioState *m, u32 action, u32 actionArg) {
         case ACT_JUMP_KICK:
             m->vel[1] = 20.0f;
             break;
+
+        case ACT_WALL_SLIDE:
+            m->vel[1] = 4.0f;
+            mario_set_forward_vel(m, 8.0f);
+            break;
     }
 
     m->peakHeight = m->pos[1];
@@ -1373,8 +1378,22 @@ void update_mario_inputs(struct MarioState *m) {
 void set_submerged_cam_preset_and_spawn_bubbles(struct MarioState *m) {
     f32 heightBelowWater;
     s16 camPreset;
+#ifdef REONUCAM
+    // skip if not submerged
+    if ((m->action & ACT_GROUP_MASK) != ACT_GROUP_SUBMERGED) return;
 
+    // R Trigger toggles camera mode override
+    if ((gPlayer1Controller->buttonPressed & R_TRIG) && (m->action & ACT_FLAG_SWIMMING)) {
+        gReonucamState.waterCamOverride ^= 1;
+    }
+
+    // If override, set mode to 8 dir. Otherwise, use normal water processing
+    if (gReonucamState.waterCamOverride) {
+        if (m->area->camera->mode != CAMERA_MODE_8_DIRECTIONS) set_camera_mode(m->area->camera, CAMERA_MODE_8_DIRECTIONS, 1);
+    } else {
+#else
     if ((m->action & ACT_GROUP_MASK) == ACT_GROUP_SUBMERGED) {
+#endif
         heightBelowWater = (f32)(m->waterLevel - 80) - m->pos[1];
         camPreset = m->area->camera->mode;
 
@@ -1414,7 +1433,6 @@ void set_submerged_cam_preset_and_spawn_bubbles(struct MarioState *m) {
  */
 void update_mario_health(struct MarioState *m) {
     s32 terrainIsSnow;
-
     if (m->health >= 0x100) {
         // When already healing or hurting Mario, Mario's HP is not changed any more here.
         if (((u32) m->healCounter | (u32) m->hurtCounter) == 0) {
@@ -1870,7 +1888,6 @@ void init_mario_from_save_file(void) {
 
     gMarioState->numCoins = 0;
     gMarioState->numStars = save_file_get_total_star_count(gCurrSaveFileNum - 1, COURSE_MIN - 1, COURSE_MAX - 1);
-    gMarioState->numKeys = 0;
 
 #ifdef SAVE_NUM_LIVES
     s8 savedLives = save_file_get_num_lives();
@@ -1888,4 +1905,5 @@ void init_mario_from_save_file(void) {
 
     gHudDisplay.coins = 0;
     gHudDisplay.wedges = 8;
+    gHudDisplay.coinType = 1;
 }

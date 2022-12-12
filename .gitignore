@@ -57,8 +57,8 @@ actors/amp/amp_body.rgba16.png
 actors/amp/amp_electricity.rgba16.png
 actors/amp/amp_eyes.rgba16.png
 actors/amp/amp_mouth.rgba16.png
-actors/blue_coin_switch/blue_coin_switch_side.rgba16.png
-actors/blue_coin_switch/blue_coin_switch_top.rgba16.png
+# actors/blue_coin_switch/blue_coin_switch_side.rgba16.png
+# actors/blue_coin_switch/blue_coin_switch_top.rgba16.png
 actors/blue_fish/blue_fish.rgba16.png
 actors/bobomb/bob-omb_buddy_left_side.rgba16.png
 actors/bobomb/bob-omb_buddy_right_side.rgba16.png
@@ -209,11 +209,11 @@ actors/explosion/explosion_3.rgba16.png
 actors/explosion/explosion_4.rgba16.png
 actors/explosion/explosion_5.rgba16.png
 actors/explosion/explosion_6.rgba16.png
-actors/eyerok/eyerok_bricks.rgba16.png
-actors/eyerok/eyerok_eye_closed.rgba16.png
-actors/eyerok/eyerok_eye_mostly_closed.rgba16.png
-actors/eyerok/eyerok_eye_mostly_open.rgba16.png
-actors/eyerok/eyerok_eye_open.rgba16.png
+# actors/eyerok/eyerok_bricks.rgba16.png
+# actors/eyerok/eyerok_eye_closed.rgba16.png
+# actors/eyerok/eyerok_eye_mostly_closed.rgba16.png
+# actors/eyerok/eyerok_eye_mostly_open.rgba16.png
+# actors/eyerok/eyerok_eye_open.rgba16.png
 actors/flame/flame_0.ia16.png
 actors/flame/flame_1.ia16.png
 actors/flame/flame_2.ia16.png
@@ -342,7 +342,7 @@ actors/mr_i_iris/mr_i_iris_closed.rgba16.png
 actors/mr_i_iris/mr_i_iris_mostly_closed.rgba16.png
 actors/mr_i_iris/mr_i_iris_mostly_open.rgba16.png
 actors/mr_i_iris/mr_i_iris_open.rgba16.png
-actors/mushroom_1up/1-up_mushroom.rgba16.png
+# actors/mushroom_1up/1-up_mushroom.rgba16.png
 actors/peach/peach_chest_jewel.rgba16.png
 actors/peach/peach_crown_jewel.rgba16.png
 actors/peach/peach_dress.rgba16.png
@@ -371,16 +371,16 @@ actors/pokey/pokey_face.rgba16.png
 actors/pokey/pokey_face_blink.rgba16.png
 actors/poundable_pole/poundable_pole_side.rgba16.png
 actors/poundable_pole/poundable_pole_top.rgba16.png
-actors/power_meter/power_meter_five_segments.rgba16.png
-actors/power_meter/power_meter_four_segments.rgba16.png
-actors/power_meter/power_meter_full.rgba16.png
-actors/power_meter/power_meter_left_side.rgba16.png
-actors/power_meter/power_meter_one_segment.rgba16.png
-actors/power_meter/power_meter_right_side.rgba16.png
-actors/power_meter/power_meter_seven_segments.rgba16.png
-actors/power_meter/power_meter_six_segments.rgba16.png
-actors/power_meter/power_meter_three_segments.rgba16.png
-actors/power_meter/power_meter_two_segments.rgba16.png
+# actors/power_meter/power_meter_five_segments.rgba16.png
+# actors/power_meter/power_meter_four_segments.rgba16.png
+# actors/power_meter/power_meter_full.rgba16.png
+# actors/power_meter/power_meter_left_side.rgba16.png
+# actors/power_meter/power_meter_one_segment.rgba16.png
+# actors/power_meter/power_meter_right_side.rgba16.png
+# actors/power_meter/power_meter_seven_segments.rgba16.png
+# actors/power_meter/power_meter_six_segments.rgba16.png
+# actors/power_meter/power_meter_three_segments.rgba16.png
+# actors/power_meter/power_meter_two_segments.rgba16.png
 actors/purple_switch/purple_switch_base.rgba16.png
 actors/purple_switch/purple_switch_exclamation_point.rgba16.png
 actors/sand/sand_particle.rgba16.png
@@ -439,8 +439,8 @@ actors/swoop/swoop_nose.rgba16.png
 actors/swoop/swoop_wing.rgba16.png
 actors/thwomp/thwomp_face.rgba16.png
 actors/thwomp/thwomp_surface.rgba16.png
-actors/toad/toad_face.rgba16.png
-actors/toad/toad_head.rgba16.png
+# actors/toad/toad_face.rgba16.png
+# actors/toad/toad_head.rgba16.png
 actors/tornado/tornado.ia16.png
 actors/treasure_chest/treasure_chest_front.rgba16.png
 actors/treasure_chest/treasure_chest_lock.rgba16.png
@@ -553,8 +553,8 @@ levels/bowser_2/0.rgba16.png
 levels/bowser_3/0.rgba16.png
 levels/bowser_3/1.rgba16.png
 levels/bowser_3/2.rgba16.png
-levels/castle_grounds/0.rgba16.png
-levels/castle_grounds/1.rgba16.png
+# levels/castle_grounds/0.rgba16.png
+# levels/castle_grounds/1.rgba16.png
 levels/castle_grounds/2.rgba16.png
 levels/castle_grounds/3.rgba16.png
 levels/castle_grounds/4.rgba16.png
@@ -582,8 +582,8 @@ levels/castle_inside/25.rgba16.png
 levels/castle_inside/26.rgba16.png
 levels/castle_inside/27.rgba16.png
 levels/castle_inside/28.rgba16.png
-levels/castle_inside/29.rgba16.png
-levels/castle_inside/3.rgba16.png
+# levels/castle_inside/29.rgba16.png
+# levels/castle_inside/3.rgba16.png
 levels/castle_inside/30.rgba16.png
 levels/castle_inside/31.rgba16.png
 levels/castle_inside/32.rgba16.png
@@ -640,7 +640,7 @@ levels/hmc/3.rgba16.png
 levels/hmc/4.rgba16.png
 levels/hmc/5.rgba16.png
 levels/hmc/6.rgba16.png
-levels/hmc/7.rgba16.png
+# levels/hmc/7.rgba16.png
 levels/intro/0.rgba16.png
 levels/intro/1.rgba16.png
 levels/intro/2_copyright.rgba16.png
@@ -687,15 +687,15 @@ levels/lll/8.rgba16.png
 levels/lll/9.rgba16.png
 levels/menu/main_menu_seg7.00018.rgba16.png
 levels/menu/main_menu_seg7.00818.rgba16.png
-levels/menu/main_menu_seg7.01018.rgba16.png
-levels/menu/main_menu_seg7.02018.rgba16.png
+# levels/menu/main_menu_seg7.01018.rgba16.png
+# levels/menu/main_menu_seg7.02018.rgba16.png
 levels/menu/main_menu_seg7.03468.rgba16.png
 levels/menu/main_menu_seg7.03C68.rgba16.png
 levels/menu/main_menu_seg7.04468.rgba16.png
 levels/menu/main_menu_seg7.04C68.rgba16.png
 levels/menu/main_menu_seg7.05468.rgba16.png
-levels/menu/main_menu_seg7.06328.rgba16.png
-levels/menu/main_menu_seg7.06B28.rgba16.png
+# levels/menu/main_menu_seg7.06328.rgba16.png
+# levels/menu/main_menu_seg7.06B28.rgba16.png
 levels/menu/main_menu_seg7.073D0.rgba16.png
 levels/menu/main_menu_seg7.075D0.rgba16.png
 levels/menu/main_menu_seg7.077D0.rgba16.png
@@ -852,11 +852,11 @@ levels/menu/main_menu_seg7.0CB48.ia8.png
 levels/menu/main_menu_seg7.0CB88.ia8.png
 levels/menu/main_menu_seg7.0CBC8.ia8.png
 levels/menu/main_menu_seg7.0CC08.ia8.png
-levels/menu/main_menu_seg7.0CC48.ia8.png
+# levels/menu/main_menu_seg7.0CC48.ia8.png
 levels/menu/main_menu_seg7.0CC88.ia8.png
 levels/menu/main_menu_seg7.0CCC8.ia8.png
-levels/menu/main_menu_seg7.0D1A8.rgba16.png
-levels/menu/main_menu_seg7.0E1A8.rgba16.png
+# levels/menu/main_menu_seg7.0D1A8.rgba16.png
+# levels/menu/main_menu_seg7.0E1A8.rgba16.png
 levels/menu/main_menu_seg7_eu.0AF80.ia8.png
 levels/menu/main_menu_seg7_eu.0B640.ia8.png
 levels/menu/main_menu_seg7_eu.0B680.ia8.png
@@ -905,14 +905,14 @@ levels/menu/main_menu_seg7_us.0B4C0.ia8.png
 levels/menu/main_menu_seg7_us.0B500.ia8.png
 levels/menu/main_menu_seg7_us.0B540.ia8.png
 levels/menu/main_menu_seg7_us.0B580.ia8.png
-levels/menu/main_menu_seg7_us.0B5C0.ia8.png
+# levels/menu/main_menu_seg7_us.0B5C0.ia8.png
 levels/menu/main_menu_seg7_us.0B600.ia8.png
 levels/menu/main_menu_seg7_us.0B640.ia8.png
 levels/menu/main_menu_seg7_us.0B680.ia8.png
 levels/menu/main_menu_seg7_us.0B6C0.ia8.png
 levels/menu/main_menu_seg7_us.0B700.ia8.png
-levels/menu/main_menu_seg7_us.0B740.ia8.png
-levels/menu/main_menu_seg7_us.0B780.ia8.png
+# levels/menu/main_menu_seg7_us.0B740.ia8.png
+# levels/menu/main_menu_seg7_us.0B780.ia8.png
 levels/menu/main_menu_seg7_us.0B7C0.ia8.png
 levels/menu/main_menu_seg7_us.0B800.ia8.png
 levels/pss/0.rgba16.png
@@ -1454,8 +1454,8 @@ textures/inside/inside_castle_textures.09000.rgba16.png
 textures/inside/inside_castle_textures.0A000.rgba16.png
 textures/inside/inside_castle_textures.0B000.rgba16.png
 textures/inside/inside_castle_textures.0B800.rgba16.png
-textures/intro_raw/hand_closed.rgba16.png
-textures/intro_raw/hand_open.rgba16.png
+# textures/intro_raw/hand_closed.rgba16.png
+# textures/intro_raw/hand_open.rgba16.png
 textures/intro_raw/mario_face_shine.ia8.png
 textures/intro_raw/red_star_0.rgba16.png
 textures/intro_raw/red_star_1.rgba16.png
@@ -1580,7 +1580,7 @@ textures/outside/castle_grounds_textures.06000.rgba16.png
 textures/outside/castle_grounds_textures.06800.rgba16.png
 textures/outside/castle_grounds_textures.07800.rgba16.png
 textures/outside/castle_grounds_textures.08000.rgba16.png
-textures/outside/castle_grounds_textures.08800.rgba16.png
+# textures/outside/castle_grounds_textures.08800.rgba16.png
 textures/outside/castle_grounds_textures.09000.rgba16.png
 textures/outside/castle_grounds_textures.09800.rgba16.png
 textures/outside/castle_grounds_textures.0A000.rgba16.png
@@ -1780,53 +1780,53 @@ textures/segment2/font_graphics.06F00.ia4.png
 textures/segment2/font_graphics.06F40.ia4.png
 textures/segment2/font_graphics.06F80.ia4.png
 textures/segment2/font_graphics.06FC0.ia4.png
-textures/segment2/segment2.00000.rgba16.png
-textures/segment2/segment2.00200.rgba16.png
-textures/segment2/segment2.00400.rgba16.png
-textures/segment2/segment2.00600.rgba16.png
-textures/segment2/segment2.00800.rgba16.png
-textures/segment2/segment2.00A00.rgba16.png
-textures/segment2/segment2.00C00.rgba16.png
-textures/segment2/segment2.00E00.rgba16.png
-textures/segment2/segment2.01000.rgba16.png
-textures/segment2/segment2.01200.rgba16.png
-textures/segment2/segment2.01400.rgba16.png
-textures/segment2/segment2.01600.rgba16.png
-textures/segment2/segment2.01800.rgba16.png
-textures/segment2/segment2.01A00.rgba16.png
-textures/segment2/segment2.01C00.rgba16.png
-textures/segment2/segment2.01E00.rgba16.png
-textures/segment2/segment2.02000.rgba16.png
-textures/segment2/segment2.02200.rgba16.png
-textures/segment2/segment2.02400.rgba16.png
-textures/segment2/segment2.02600.rgba16.png
-textures/segment2/segment2.02800.rgba16.png
-textures/segment2/segment2.02A00.rgba16.png
-textures/segment2/segment2.02C00.rgba16.png
-textures/segment2/segment2.02E00.rgba16.png
-textures/segment2/segment2.03000.rgba16.png
-textures/segment2/segment2.03200.rgba16.png
-textures/segment2/segment2.03400.rgba16.png
-textures/segment2/segment2.03600.rgba16.png
-textures/segment2/segment2.03800.rgba16.png
-textures/segment2/segment2.03A00.rgba16.png
-textures/segment2/segment2.03C00.rgba16.png
-textures/segment2/segment2.03E00.rgba16.png
-textures/segment2/segment2.04000.rgba16.png
-textures/segment2/segment2.04200.rgba16.png
-textures/segment2/segment2.04400.rgba16.png
-textures/segment2/segment2.04600.rgba16.png
-textures/segment2/segment2.04800.rgba16.png
-textures/segment2/segment2.04A00.rgba16.png
+# textures/segment2/segment2.00000.rgba16.png
+# textures/segment2/segment2.00200.rgba16.png
+# textures/segment2/segment2.00400.rgba16.png
+# textures/segment2/segment2.00600.rgba16.png
+# textures/segment2/segment2.00800.rgba16.png
+# textures/segment2/segment2.00A00.rgba16.png
+# textures/segment2/segment2.00C00.rgba16.png
+# textures/segment2/segment2.00E00.rgba16.png
+# textures/segment2/segment2.01000.rgba16.png
+# textures/segment2/segment2.01200.rgba16.png
+# textures/segment2/segment2.01400.rgba16.png
+# textures/segment2/segment2.01600.rgba16.png
+# textures/segment2/segment2.01800.rgba16.png
+# textures/segment2/segment2.01A00.rgba16.png
+# textures/segment2/segment2.01C00.rgba16.png
+# textures/segment2/segment2.01E00.rgba16.png
+# textures/segment2/segment2.02000.rgba16.png
+# textures/segment2/segment2.02200.rgba16.png
+# textures/segment2/segment2.02400.rgba16.png
+# textures/segment2/segment2.02600.rgba16.png
+# textures/segment2/segment2.02800.rgba16.png
+# textures/segment2/segment2.02A00.rgba16.png
+# textures/segment2/segment2.02C00.rgba16.png
+# textures/segment2/segment2.02E00.rgba16.png
+# textures/segment2/segment2.03000.rgba16.png
+# textures/segment2/segment2.03200.rgba16.png
+# textures/segment2/segment2.03400.rgba16.png
+# textures/segment2/segment2.03600.rgba16.png
+# textures/segment2/segment2.03800.rgba16.png
+# textures/segment2/segment2.03A00.rgba16.png
+# textures/segment2/segment2.03C00.rgba16.png
+# textures/segment2/segment2.03E00.rgba16.png
+# textures/segment2/segment2.04000.rgba16.png
+# textures/segment2/segment2.04200.rgba16.png
+# textures/segment2/segment2.04400.rgba16.png
+# textures/segment2/segment2.04600.rgba16.png
+# textures/segment2/segment2.04800.rgba16.png
+# textures/segment2/segment2.04A00.rgba16.png
 textures/segment2/segment2.04C00.rgba16.png
 textures/segment2/segment2.04E00.rgba16.png
-textures/segment2/segment2.05000.rgba16.png
-textures/segment2/segment2.05200.rgba16.png
-textures/segment2/segment2.05400.rgba16.png
-textures/segment2/segment2.05600.rgba16.png
-textures/segment2/segment2.05800.rgba16.png
-textures/segment2/segment2.05A00.rgba16.png
-textures/segment2/segment2.05C00.rgba16.png
+# textures/segment2/segment2.05000.rgba16.png
+# textures/segment2/segment2.05200.rgba16.png
+# textures/segment2/segment2.05400.rgba16.png
+# textures/segment2/segment2.05600.rgba16.png
+# textures/segment2/segment2.05800.rgba16.png
+# textures/segment2/segment2.05A00.rgba16.png
+# textures/segment2/segment2.05C00.rgba16.png
 textures/segment2/segment2.05E00.rgba16.png
 textures/segment2/segment2.06000.rgba16.png
 textures/segment2/segment2.06200.rgba16.png
@@ -2031,7 +2031,7 @@ textures/segment2/segment2.08150.rgba16.png
 textures/segment2/segment2.081D0.rgba16.png
 textures/segment2/segment2.0F458.ia8.png
 textures/segment2/segment2.0FC58.ia8.png
-textures/segment2/segment2.10458.ia8.png
+# textures/segment2/segment2.10458.ia8.png
 textures/segment2/segment2.11458.ia8.png
 textures/segment2/segment2.11C58.rgba16.png
 textures/segment2/segment2.12458.rgba16.png

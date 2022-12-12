@@ -241,6 +241,7 @@ void set_background_music(u16 a, u16 seqArgs, s16 fadeTimer) {
         {
             play_music(SEQ_PLAYER_LEVEL, seqArgs, fadeTimer);
             sCurrentMusic = seqArgs;
+            activate_song_name_display(seqArgs & 0xff);
         }
     }
 }

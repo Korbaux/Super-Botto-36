@@ -13,90 +13,90 @@
         "inst0": {
             "release_rate": 208,
             "envelope": "envelope0",
-            "sound": "00_mario_waaaooow"
+            "sound": "00_custom_mario_waaaooow"
         },
         "inst1": {
             "release_rate": 208,
             "envelope": "envelope0",
-            "sound": "01_mario_hoohoo"
+            "sound": "01_custom_mario_hoohoo"
         },
         "inst2": {
             "release_rate": 208,
             "envelope": "envelope0",
-            "sound": "02_mario_panting"
+            "sound": "02_custom_mario_panting"
         },
         "inst3": {
             "release_rate": 208,
             "envelope": "envelope0",
-            "sound": "03_mario_dying"
+            "sound": "03_custom_mario_dying"
         },
         "inst4": {
             "release_rate": 208,
             "envelope": "envelope0",
-            "sound": "04_mario_on_fire"
+            "sound": "04_custom_mario_on_fire"
         },
         "inst5": {
             "release_rate": 208,
             "envelope": "envelope0",
-            "sound": "05_mario_uh2"
+            "sound": "05_custom_mario_uh2"
         },
         "inst6": {
             "release_rate": 208,
             "envelope": "envelope0",
-            "sound": "06_mario_coughing"
+            "sound": "06_custom_mario_coughing"
         },
         "inst7": {
             "release_rate": 208,
             "envelope": "envelope0",
-            "sound": "07_mario_its_a_me_mario"
+            "sound": "07_custom_mario_its_a_me_mario"
         },
         "inst8": {
             "release_rate": 208,
             "envelope": "envelope0",
-            "sound": "08_mario_punch_yah"
+            "sound": "08_custom_mario_punch_yah"
         },
         "inst9": {
             "release_rate": 208,
             "envelope": "envelope0",
-            "sound": "09_mario_punch_hoo"
+            "sound": "09_custom_mario_punch_hoo"
         },
         "inst10": {
             "release_rate": 208,
             "envelope": "envelope0",
-            "sound": "0A_mario_mama_mia"
+            "sound": "0A_custom_mario_mama_mia"
         },
         "inst11": {
             "release_rate": 208,
             "envelope": "envelope0",
-            "sound": "0B_mario_okey_dokey"
+            "sound": "0B_custom_mario_okey_dokey"
         },
         "inst12": {
             "release_rate": 208,
             "envelope": "envelope0",
-            "sound": "0C_mario_drowning"
+            "sound": "0C_custom_mario_drowning"
         },
         "inst13": {
             "release_rate": 208,
             "envelope": "envelope0",
-            "sound": "0D_mario_thank_you_playing_my_game"
+            "sound": "0D_custom_mario_thank_you_playing_my_game"
         },
         "inst14": {
             "ifdef": ["VERSION_US", "VERSION_EU", "VERSION_SH"],
             "release_rate": 208,
             "envelope": "envelope0",
-            "sound": "0E_peach_dear_mario"
+            "sound": "0E_custom_peach_dear_mario"
         },
         "inst15": {
             "ifdef": ["VERSION_US", "VERSION_EU", "VERSION_SH"],
             "release_rate": 208,
             "envelope": "envelope0",
-            "sound": "0F_peach_mario"
+            "sound": "0F_custom_peach_mario"
         },
         "inst16": {
             "ifdef": ["VERSION_US", "VERSION_EU", "VERSION_SH"],
             "release_rate": 208,
             "envelope": "envelope0",
-            "sound": "10_peach_power_of_the_stars"
+            "sound": "10_custom_peach_power_of_the_stars"
         },
         "inst17": {
             "ifdef": ["VERSION_US", "VERSION_EU", "VERSION_SH"],
@@ -108,7 +108,7 @@
             "ifdef": ["VERSION_US", "VERSION_EU", "VERSION_SH"],
             "release_rate": 208,
             "envelope": "envelope0",
-            "sound": "12_peach_thank_you_mario"
+            "sound": "12_custom_peach_thank_you_mario"
         },
         "inst19": {
             "ifdef": ["VERSION_US", "VERSION_EU", "VERSION_SH"],
@@ -126,13 +126,13 @@
             "ifdef": ["VERSION_US", "VERSION_EU", "VERSION_SH"],
             "release_rate": 208,
             "envelope": "envelope0",
-            "sound": "15_peach_for_mario"
+            "sound": "15_custom_peach_for_mario"
         },
         "inst22": {
             "ifdef": ["VERSION_US", "VERSION_EU", "VERSION_SH"],
             "release_rate": 208,
             "envelope": "envelope0",
-            "sound": "16_peach_mario2"
+            "sound": "16_custom_peach_mario2"
         }
     },
     "instrument_list": [

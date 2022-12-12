@@ -355,7 +355,7 @@ sound_ref .sound_action_jump_default
 sound_ref .sound_action_jump_default
 sound_ref .sound_action_jump_default
 sound_ref .sound_action_jump_default
-
+sound_ref .sound_mario_crash_screen
 .sound_action_jump_default:
 chan_setbank 1
 chan_setinstr 0
@@ -1524,6 +1524,16 @@ chan_setinstr 8
 chan_setlayer 1, .layer_3F1
 chan_end
 
+.sound_mario_crash_screen:
+chan_setbank 11
+chan_setinstr 0
+chan_setlayer 0, .layer_sound_mario_crash_screen
+chan_end
+
+.layer_sound_mario_crash_screen:
+layer_note1 39, 0xc8, 127
+layer_end
+
 .channel1_table:
 sound_ref .sound_moving_slide_default
 sound_ref .sound_moving_slide_grass
@@ -2039,7 +2049,6 @@ sound_ref .sound_peach_something_special
 sound_ref .sound_peach_bake_a_cake
 sound_ref .sound_peach_for_mario
 sound_ref .sound_peach_mario2
-
 .sound_mario_jump_hoo:
 chan_setbank 8
 chan_setinstr 0

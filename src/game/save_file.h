@@ -31,7 +31,7 @@ struct SaveFile {
     u8 capLevel;
     u8 capArea;
 #ifdef SAVE_NUM_LIVES
-    s8 numLives;
+    u8 numLives;
     u8 filler[5];
 #else
     // Note: the coordinates get set, but are never actually used, since the
@@ -46,7 +46,7 @@ struct SaveFile {
     // cannon is open.
     u8 courseStars[COURSE_COUNT]; // 200 bits
 
-    u8 courseCoinScores[COURSE_STAGES_COUNT]; // 120 bits
+    u16 courseCoinScores[COURSE_STAGES_COUNT]; // 120 bits
 
     struct SaveBlockSignature signature; // 32 bits
 };
@@ -66,6 +66,10 @@ struct MainMenuSaveData {
     u8 soundMode: 2;
 #ifdef WIDE
     u8 wideMode: 1;
+#endif
+//    s32 saveFoV;
+#ifdef REONUCAM
+    u8 cameraSpeedSetting: 3;
 #endif
 
 #if MULTILANG
@@ -191,14 +195,20 @@ void save_file_set_cannon_unlocked(void);
 void save_file_set_cap_pos(s16 x, s16 y, s16 z);
 s32 save_file_get_cap_pos(Vec3s capPos);
 #ifdef SAVE_NUM_LIVES
-s32 save_file_get_num_lives(void);
-void save_file_set_num_lives(s8 numLives);
+u16 save_file_get_num_lives(void);
+void save_file_set_num_lives(u16 numLives);
 #endif
 void save_file_set_sound_mode(u16 mode);
 u32 save_file_get_sound_mode(void);
 #ifdef WIDE
 u32 save_file_get_widescreen_mode(void);
 void save_file_set_widescreen_mode(u8 mode);
+//s16 save_file_get_fov(void);
+//void save_file_set_fov(s16 mode);
+#endif
+#ifdef REONUCAM
+u8 save_file_get_camera_speed(void);
+void save_file_set_camera_speed(u8 speed);
 #endif
 void save_file_move_cap_to_default_location(void);
 

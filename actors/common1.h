@@ -36,40 +36,40 @@ extern const GeoLayout silver_coin_geo[];
 extern const GeoLayout silver_coin_no_shadow_geo[];
 
 extern const Gfx coin_seg3_dl_yellow_0[];
-extern const Gfx coin_seg3_dl_yellow_22_5[];
-extern const Gfx coin_seg3_dl_yellow_45[];
-extern const Gfx coin_seg3_dl_yellow_67_5[];
-extern const Gfx coin_seg3_dl_yellow_90[];
-extern const Gfx coin_seg3_dl_yellow_67_5_r[];
-extern const Gfx coin_seg3_dl_yellow_45_r[];
-extern const Gfx coin_seg3_dl_yellow_22_5_r[];
+extern const Gfx coin_seg3_dl_yellow_1[];
+extern const Gfx coin_seg3_dl_yellow_2[];
+extern const Gfx coin_seg3_dl_yellow_3[];
+extern const Gfx coin_seg3_dl_yellow_4[];
+extern const Gfx coin_seg3_dl_yellow_5[];
+extern const Gfx coin_seg3_dl_yellow_6[];
+extern const Gfx coin_seg3_dl_yellow_7[];
 
 extern const Gfx coin_seg3_dl_blue_0[];
-extern const Gfx coin_seg3_dl_blue_22_5[];
-extern const Gfx coin_seg3_dl_blue_45[];
-extern const Gfx coin_seg3_dl_blue_67_5[];
-extern const Gfx coin_seg3_dl_blue_90[];
-extern const Gfx coin_seg3_dl_blue_67_5_r[];
-extern const Gfx coin_seg3_dl_blue_45_r[];
-extern const Gfx coin_seg3_dl_blue_22_5_r[];
+extern const Gfx coin_seg3_dl_blue_1[];
+extern const Gfx coin_seg3_dl_blue_2[];
+extern const Gfx coin_seg3_dl_blue_3[];
+extern const Gfx coin_seg3_dl_blue_4[];
+extern const Gfx coin_seg3_dl_blue_5[];
+extern const Gfx coin_seg3_dl_blue_6[];
+extern const Gfx coin_seg3_dl_blue_7[];
 
 extern const Gfx coin_seg3_dl_red_0[];
-extern const Gfx coin_seg3_dl_red_22_5[];
-extern const Gfx coin_seg3_dl_red_45[];
-extern const Gfx coin_seg3_dl_red_67_5[];
-extern const Gfx coin_seg3_dl_red_90[];
-extern const Gfx coin_seg3_dl_red_67_5_r[];
-extern const Gfx coin_seg3_dl_red_45_r[];
-extern const Gfx coin_seg3_dl_red_22_5_r[];
+extern const Gfx coin_seg3_dl_red_1[];
+extern const Gfx coin_seg3_dl_red_2[];
+extern const Gfx coin_seg3_dl_red_3[];
+extern const Gfx coin_seg3_dl_red_4[];
+extern const Gfx coin_seg3_dl_red_5[];
+extern const Gfx coin_seg3_dl_red_6[];
+extern const Gfx coin_seg3_dl_red_7[];
 
 extern const Gfx coin_seg3_dl_secret_0[];
-extern const Gfx coin_seg3_dl_secret_22_5[];
-extern const Gfx coin_seg3_dl_secret_45[];
-extern const Gfx coin_seg3_dl_secret_67_5[];
-extern const Gfx coin_seg3_dl_secret_90[];
-extern const Gfx coin_seg3_dl_secret_67_5_r[];
-extern const Gfx coin_seg3_dl_secret_45_r[];
-extern const Gfx coin_seg3_dl_secret_22_5_r[];
+extern const Gfx coin_seg3_dl_secret_1[];
+extern const Gfx coin_seg3_dl_secret_2[];
+extern const Gfx coin_seg3_dl_secret_3[];
+extern const Gfx coin_seg3_dl_secret_4[];
+extern const Gfx coin_seg3_dl_secret_5[];
+extern const Gfx coin_seg3_dl_secret_6[];
+extern const Gfx coin_seg3_dl_secret_7[];
 
 #else
 extern const Gfx coin_seg3_sub_dl_begin[];
@@ -254,9 +254,6 @@ extern const Gfx star_seg3_sub_dl_eyes[];
 extern const Gfx star_seg3_dl_eyes[];
 
 // transparent_star
-extern const GeoLayout transparent_star_geo[];
-extern const Gfx transparent_star_seg3_sub_dl_body[];
-extern const Gfx transparent_star_seg3_dl_body[];
 
 // tree
 extern const GeoLayout bubbly_tree_geo[];
@@ -293,5 +290,9 @@ extern const Gfx wooden_signpost_seg3_dl_0302DC40[];
 extern const Gfx wooden_signpost_seg3_dl_0302DCD0[];
 extern const Gfx wooden_signpost_seg3_dl_0302DD08[];
 extern const Collision wooden_signpost_seg3_collision_0302DD80[];
+
+#include "star/geo_header.h"
+
+#include "transparent_star/geo_header.h"
 
 #endif

@@ -8,6 +8,11 @@
      ((asc) >= 'A' && (asc) <= 'Z') ? ((asc) - 'A' + 0x0A) :       \
      ((asc) >= 'a' && (asc) <= 'z') ? ((asc) - 'a' + 0x24) : 0x00)
 
+#define DIALOG_TO_ASCII(asc)                                       \
+    (((asc) >= '0' - '0' && (asc) <= '9' - '0') ? ((asc) + '0') :              \
+     ((asc) >= 'A' - 'a' + 0x0A && (asc) <= 'Z' - 'A' + 0x0A) ? ((asc) + 'A' - 0x0A) :       \
+     ((asc) >= 'a' - 'a' + 0x24 && (asc) <= 'z' - 'a' + 0x24) ? ((asc) + 'a' - 0x24) : 0x00)
+
 enum MenuMtxPushOp {
     MENU_MTX_NONE,
     MENU_MTX_PUSH,
@@ -53,7 +58,6 @@ extern s8 gHudFlash;
 
 extern s8 gDialogCourseActNum;
 extern s16 gInGameLanguage;
-
 struct DialogEntry {
     /*0x00*/ u32 unused;
     /*0x04*/ s8 linesPerBox;

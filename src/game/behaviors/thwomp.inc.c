@@ -1,5 +1,5 @@
 // thwomp.inc.c
-
+u8 face;
 void grindel_thwomp_act_on_ground(void) {
     if (o->oTimer == 0) {
         o->oThwompRandomTimer = random_float() * 10.0f + 20.0f;
@@ -7,9 +7,13 @@ void grindel_thwomp_act_on_ground(void) {
     if (o->oTimer > o->oThwompRandomTimer) {
         o->oAction = GRINDEL_THWOMP_ACT_RISING;
     }
+    if (o->oTimer > o->oThwompRandomTimer / 4) {
+        face = 1;
+    }
 }
 
 void grindel_thwomp_act_falling(void) {
+    face = 2;
     o->oVelY += -4.0f;
     o->oPosY += o->oVelY;
     if (o->oPosY < o->oHomeY) {
@@ -20,6 +24,7 @@ void grindel_thwomp_act_falling(void) {
 }
 
 void grindel_thwomp_act_land(void) {
+    face = 3;
     if (o->oTimer == 0 && o->oDistanceToMario < 1500.0f) {
         cur_obj_shake_screen(SHAKE_POS_SMALL);
         cur_obj_play_sound_2(SOUND_OBJ_THWOMP);
@@ -33,18 +38,35 @@ void grindel_thwomp_act_floating(void) {
     if (o->oTimer == 0) {
         o->oThwompRandomTimer = random_float() * 30.0f + 10.0f;
     }
+    if (o->oTimer > o->oThwompRandomTimer - (o->oThwompRandomTimer / 4)) {
+        face = 1;
+    } else {
+        face = 0;
+    }
     if (o->oTimer > o->oThwompRandomTimer) {
         o->oAction = GRINDEL_THWOMP_ACT_FALLING;
     }
 }
 
 void grindel_thwomp_act_rising(void) {
+    face = 0;
     if (o->oBehParams2ndByte + 40 < o->oTimer) {
         o->oAction = GRINDEL_THWOMP_ACT_FLOATING;
         o->oPosY += 5.0f;
     } else {
         o->oPosY += 10.0f;
     }
+}
+
+Gfx *changeFace(s32 callContext, struct GraphNode *node, UNUSED Mat4 *mtx) {
+    struct Object *obj = (struct Object *) gCurGraphNodeObject;
+    struct GraphNodeSwitchCase *switchCase = (struct GraphNodeSwitchCase *) node;
+
+    if (callContext == GEO_CONTEXT_RENDER) {
+        switchCase->selectedCase = face;
+    }
+
+    return NULL;
 }
 
 ObjActionFunc sGrindelThwompActions[] = {

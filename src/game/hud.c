@@ -107,6 +107,8 @@ static struct PowerMeterHUD sPowerMeterHUD = {
 // when the power meter is hidden.
 s32 sPowerMeterVisibleTimer = 0;
 
+float sStarGetAlpha = 0.0f;
+
 #ifdef BREATH_METER
 static s16 sBreathMeterStoredValue;
 static struct PowerMeterHUD sBreathMeterHUD = {
@@ -416,8 +418,15 @@ void render_debug_mode(void) {
  * Renders the amount of coins collected.
  */
 void render_hud_coins(void) {
-    print_text(HUD_COINS_X, HUD_TOP_Y, "$"); // 'Coin' glyph
+    // 'Coin' glyph
+    switch (gHudDisplay.coinType) {
+        case HUD_COIN_TYPE_YELLOW: print_text(HUD_COINS_X, HUD_TOP_Y, "$"); break;
+        case HUD_COIN_TYPE_BLUE:   print_text(HUD_COINS_X, HUD_TOP_Y, ";"); break;
+        case HUD_COIN_TYPE_RED:    print_text(HUD_COINS_X, HUD_TOP_Y, "@"); break;
+        case HUD_COIN_TYPE_SILVER: print_text(HUD_COINS_X, HUD_TOP_Y, "+"); break;
+    }
     print_text((HUD_COINS_X + 16), HUD_TOP_Y, "*"); // 'X' glyph
+
     print_text_fmt_int((HUD_COINS_X + 30), HUD_TOP_Y, "%d", gHudDisplay.coins);
 }
 
@@ -430,22 +439,22 @@ void render_hud_stars(void) {
     s8 showX = (gHudDisplay.stars < 100);
     print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(HUD_STARS_X), HUD_TOP_Y, "^"); // 'Star' glyph
     if (showX) print_text((GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(HUD_STARS_X) + 16), HUD_TOP_Y, "*"); // 'X' glyph
-    print_text_fmt_int((showX * 14) + GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(HUD_STARS_X - 16),
-                       HUD_TOP_Y, "%d", gHudDisplay.stars);
+    print_text_fmt_int((showX * 14) + GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(HUD_STARS_X - 16), HUD_TOP_Y, "%d", gHudDisplay.stars);
 }
 
 /**
  * Unused function that renders the amount of keys collected.
  * Leftover function from the beta version of the game.
+ * Disabled for archival.
+ *
+ * void render_hud_keys(void) {
+ *     s16 i;
+ *
+ *     for (i = 0; i < gHudDisplay.keys; i++) {
+ *         print_text((i * 16) + 220, 142, "|"); // unused glyph - beta key
+ *     }
+ * }
  */
-void render_hud_keys(void) {
-    s16 i;
-
-    for (i = 0; i < gHudDisplay.keys; i++) {
-        print_text((i * 16) + 220, 142, "|"); // unused glyph - beta key
-    }
-}
-
 /**
  * Renders the timer when Mario start sliding in PSS.
  */
@@ -524,6 +533,28 @@ void render_hud_camera_status(void) {
     gSPDisplayList(gDisplayListHead++, dl_hud_img_end);
 }
 
+void render_hud_level_stars(s16 starCount) {
+    s32 i;
+
+    u8 flag = 1;
+    u8 starFlags = save_file_get_star_flags(gCurrSaveFileNum - 1, gCurrCourseNum - 1);
+
+    u8 starText[] = { GLYPH_STAR, GLYPH_SPACE };
+
+    for (i = 0; i < starCount; i++, flag <<= 1) {
+        gSPDisplayList(gDisplayListHead++, dl_ia_text_begin);
+        if (starFlags & flag) {
+            gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, 255 * (1-sStarGetAlpha));
+        }
+        else {
+            gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, 63 * (1-sStarGetAlpha));
+        }
+        print_hud_lut_string(HUD_LUT_GLOBAL, 22 + i*16, SCREEN_HEIGHT - 45 + -(sBreathMeterHUD.y / 2) - ( 10 * (sBreathMeterHUD.animation != BREATH_METER_HIDDEN) ) , starText);
+        gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, 255);
+        gSPDisplayList(gDisplayListHead++, dl_ia_text_end);
+    }
+}
+
 /**
  * Render HUD strings using hudDisplayFlags with it's render functions,
  * excluding the cannon reticle which detects a camera preset for it.
@@ -576,10 +607,6 @@ void render_hud(void) {
             render_hud_stars();
         }
 
-        if (hudDisplayFlags & HUD_DISPLAY_FLAG_KEYS) {
-            render_hud_keys();
-        }
-
 #ifdef BREATH_METER
         if (hudDisplayFlags & HUD_DISPLAY_FLAG_BREATH_METER) render_hud_breath_meter();
 #endif
@@ -610,5 +637,22 @@ void render_hud(void) {
 #ifdef PUPPYPRINT
         print_set_envcolour(255, 255, 255, 255);
 #endif
+
+        if (gCurrDemoInput == NULL
+            && gCurrLevelNum != LEVEL_CASTLE_GROUNDS && gCurrLevelNum != LEVEL_CASTLE && gCurrLevelNum != LEVEL_CASTLE_COURTYARD
+            && gCurrLevelNum != LEVEL_BOWSER_1 && gCurrLevelNum != LEVEL_BOWSER_2 && gCurrLevelNum != LEVEL_BOWSER_3 && gCurrLevelNum != LEVEL_ENDING)
+        {
+            if (gCurrLevelNum == LEVEL_BITDW || gCurrLevelNum == LEVEL_BITFS || gCurrLevelNum == LEVEL_BITS ||
+            gCurrLevelNum == LEVEL_COTMC || gCurrLevelNum == LEVEL_TOTWC || gCurrLevelNum == LEVEL_VCUTM ||
+            gCurrLevelNum == LEVEL_WMOTR || gCurrLevelNum == LEVEL_SA) {
+                render_hud_level_stars(1);
+            }
+            else if (gCurrLevelNum == LEVEL_PSS) {
+                render_hud_level_stars(2);
+            }
+            else {
+                render_hud_level_stars(6 + (1 || (save_file_get_star_flags(gCurrSaveFileNum - 1, gCurrCourseNum - 1) & (1 << 6))));
+            }
+        }
     }
 }

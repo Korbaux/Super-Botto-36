@@ -1,0 +1,22 @@
+{
+    "date": "1996-02-14",
+    "sample_bank": "custom_botto",
+    "envelopes": {
+        "envelope0": [
+            [2, 32700],
+            [1, 32700],
+            [32700, 29430],
+            "hang"
+        ]
+    },
+    "instruments": {
+        "inst0": {
+            "release_rate": 208,
+            "envelope": "envelope0",
+            "sound": "00_mario_crash_screen"
+        }
+    },
+    "instrument_list": [
+        "inst0"
+    ]
+}

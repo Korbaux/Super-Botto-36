@@ -88,7 +88,7 @@ void format_integer(s32 n, s32 base, char *dest, s32 *totalLength, u8 width, s8 
 
         // Use 'M' prefix to indicate negative numbers.
         if (negative == TRUE) {
-            dest[len] = 'M';
+            dest[len] = '-';
             len++;
         }
 
@@ -338,6 +338,10 @@ s32 char_to_glyph_index(char c) {
 
     if (c == '+') {
         return GLYPH_SILVER_COIN; // silver coin
+    }
+
+    if (c == ';') {
+        return GLYPH_BLUE_COIN; // blue coin
     }
 
     if (c == ',') {

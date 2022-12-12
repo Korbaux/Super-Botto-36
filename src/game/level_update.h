@@ -108,16 +108,23 @@ extern s32 sDelayedWarpArg;
 extern s8 sTimerRunning;
 
 struct HudDisplay {
-    /*0x00*/ s16 lives;
+    /*0x00*/ u16 lives;
     /*0x02*/ s16 coins;
     /*0x04*/ s16 stars;
     /*0x06*/ s16 wedges;
-    /*0x08*/ s16 keys;
+    /*0x08*/ u8  coinType;
     /*0x0A*/ s16 flags;
     /*0x0C*/ u16 timer;
 #ifdef BREATH_METER
              u16 breath;
 #endif
+};
+
+enum hudCoinTypes {
+    HUD_COIN_TYPE_YELLOW          = 1,
+    HUD_COIN_TYPE_RED             = 2,
+    HUD_COIN_TYPE_BLUE            = 5,
+    HUD_COIN_TYPE_SILVER          = 0
 };
 
 extern struct HudDisplay gHudDisplay;

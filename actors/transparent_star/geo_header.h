@@ -1,0 +1,11 @@
+extern const GeoLayout transparent_star_geo[];
+extern Lights1 transparent_star_lemon_1_001_f3d_lights;
+extern Lights1 transparent_star_lemon_1_001_f3d_001_lights;
+extern Vtx transparent_star_Lemon_01_mesh_layer_1_vtx_0[388];
+extern Gfx transparent_star_Lemon_01_mesh_layer_1_tri_0[];
+extern Vtx transparent_star_Lemon_01_mesh_layer_1_vtx_1[15];
+extern Gfx transparent_star_Lemon_01_mesh_layer_1_tri_1[];
+extern Gfx mat_transparent_star_lemon_1_001_f3d[];
+extern Gfx mat_transparent_star_lemon_1_001_f3d_001[];
+extern Gfx transparent_star_Lemon_01_mesh_layer_1[];
+extern Gfx transparent_star_material_revert_render_settings[];

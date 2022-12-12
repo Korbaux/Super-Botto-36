@@ -183,7 +183,7 @@ void bhv_act_selector_init(void) {
     }
 #endif
 
-    render_100_coin_star(stars);
+ //   render_100_coin_star(stars);
 }
 
 /**
@@ -379,11 +379,11 @@ void print_act_selector_strings(void) {
     // Print the numbers above each star.
     for (i = 1; i <= sVisibleStars; i++) {
         starNumbers[0] = i;
-#if MULTILANG
-        print_menu_generic_string(143 - sVisibleStars * 15 + i * 30, 38, starNumbers);
-#else
-        print_menu_generic_string(139 - sVisibleStars * 17 + i * 34, 38, starNumbers);
-#endif
+// #if MULTILANG
+//         print_menu_generic_string(143 - sVisibleStars * 15 + i * 30, 38, starNumbers);
+// #else
+//         print_menu_generic_string(139 - sVisibleStars * 17 + i * 34, 38, starNumbers);
+// #endif
     }
 
     gSPDisplayList(gDisplayListHead++, dl_menu_ia8_text_end);

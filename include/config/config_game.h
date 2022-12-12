@@ -12,22 +12,22 @@
 // #define ENABLE_VANILLA_LEVEL_SPECIFIC_CHECKS
 
 // Disables lives and hides the lives counter.
-#define DISABLE_LIVES
+// #define DISABLE_LIVES
 
 // Saves the number of lives to the save file (Does nothing if DISABLE_LIVES is enabled).
 #define SAVE_NUM_LIVES
 
 // This is the number of lives Mario starts with after a game over or starting the game for the first time (must be lower than 127).
-#define DEFAULT_NUM_LIVES 4
+#define DEFAULT_NUM_LIVES 36
 
 // This can be 0..127.
-#define MAX_NUM_LIVES   100
+#define MAX_NUM_LIVES   999
 
 // This can be 0..32767.
 #define MAX_NUM_COINS   999
 
 // Air/breath meter is separate from health meter when underwater.
-// #define BREATH_METER
+#define BREATH_METER
 
 // Number of coins to spawn the "100 coin" star. If you remove the define altogether, then there won't be a 100 coin star at all.
 #define X_COIN_STAR 100
@@ -48,16 +48,16 @@
 #define AREA_COUNT 8
 
 // Makes signs and NPCs easier to talk to.
-// #define EASIER_DIALOG_TRIGGER
+ #define EASIER_DIALOG_TRIGGER
 
 // Shows an "A" when Mario is able to talk [requires EASIER_DIALOG_TRIGGER].
-// #define DIALOG_INDICATOR
+ #define DIALOG_INDICATOR
 
 // Include the English characters that were missing from US segment2
 // J, Q, V, X, Z, ¨, !, !!, ?, &, %, ., and the beta key.
 // [MAKE SURE TO INCLUDE EU AND JP/SH BASEROMS IN THE REPO TO OBTAIN THE ASSETS]
 // If this is disabled, backup assets will be used.
-// #define COMPLETE_EN_US_SEGMENT2
+ #define COMPLETE_EN_US_SEGMENT2
 
 // Removes multi-language cake screen.
 #define EU_CUSTOM_CAKE_FIX

@@ -70,6 +70,7 @@ extern const GeoLayout thwomp_geo[];
 extern const Gfx thwomp_seg5_dl_0500B570[];
 extern const Gfx thwomp_seg5_dl_0500B718[];
 extern const Gfx thwomp_seg5_dl_0500B750[];
+extern const Gfx changeFace[];
 extern const Collision thwomp_seg5_collision_0500B7D0[];
 extern const Collision thwomp_seg5_collision_0500B92C[];
 
@@ -90,5 +91,7 @@ extern const Gfx yoshi_egg_seg5_dl_05009880[];
 extern const Gfx yoshi_egg_seg5_dl_05009898[];
 extern const Gfx yoshi_egg_seg5_dl_050098B0[];
 extern const Gfx yoshi_egg_seg5_dl_050098C8[];
+
+#include "thwomp/geo_header.h"
 
 #endif
