@@ -227,8 +227,8 @@ actors/flyguy/flyguy_face.rgba16.png
 actors/flyguy/flyguy_propeller.ia16.png
 actors/fwoosh/fwoosh_face.ia16.png
 actors/goomba/goomba_body.rgba16.png
-actors/goomba/goomba_face.rgba16.png
-actors/goomba/goomba_face_blink.rgba16.png
+# actors/goomba/goomba_face.rgba16.png
+# actors/goomba/goomba_face_blink.rgba16.png
 actors/haunted_cage/bbh_cage_bars.rgba16.png
 actors/haunted_cage/bbh_cage_double_ornament.rgba16.png
 actors/haunted_cage/bbh_cage_floor.rgba16.png
