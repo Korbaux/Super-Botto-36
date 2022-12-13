@@ -1,5 +1,5 @@
 #include <ultra64.h>
-
+#include "song_name_display.h"
 #include "area.h"
 #include "audio/external.h"
 #include "engine/graph_node.h"
