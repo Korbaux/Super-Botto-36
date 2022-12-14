@@ -1,7 +1,6 @@
 // 0x07016284 - 0x070163F8
 const MacroObject ccm_seg7_area_1_macro_objs[] = {
     MACRO_OBJECT_WITH_BEH_PARAM(/*preset*/ macro_wooden_signpost,           /*yaw*/ 180, /*pos*/ -2412,  2912,  -878, /*behParam*/ DIALOG_040),
-    MACRO_OBJECT(/*preset*/ macro_mr_blizzard,               /*yaw*/   0, /*pos*/  3054, -2674,  2072),
     MACRO_OBJECT(/*preset*/ macro_spindrift,                 /*yaw*/   0, /*pos*/  2542,  2622, -1714),
     MACRO_OBJECT(/*preset*/ macro_spindrift,                 /*yaw*/   0, /*pos*/ -6090, -1740,  1936),
     MACRO_OBJECT(/*preset*/ macro_spindrift,                 /*yaw*/   0, /*pos*/  4346, -3068,   400),
