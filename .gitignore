@@ -319,8 +319,8 @@ actors/mario/mario_overalls_button.rgba16.png
 actors/mario/mario_sideburn.rgba16.png
 actors/mario/mario_wing.rgba16.png
 actors/mario/mario_wing_tip.rgba16.png
-actors/mario_cap/mario_cap_logo.rgba16.png
-actors/mario_cap/mario_cap_metal.rgba16.png
+# actors/mario_cap/mario_cap_logo.rgba16.png
+# actors/mario_cap/mario_cap_metal.rgba16.png
 actors/mario_cap/mario_cap_metal_wing_tip_unused.rgba16.png
 actors/mario_cap/mario_cap_metal_wing_unused.rgba16.png
 actors/mario_cap/mario_cap_wing.rgba16.png
@@ -553,9 +553,9 @@ levels/bowser_2/0.rgba16.png
 levels/bowser_3/0.rgba16.png
 levels/bowser_3/1.rgba16.png
 levels/bowser_3/2.rgba16.png
-# levels/castle_grounds/0.rgba16.png
+levels/castle_grounds/0.rgba16.png
 # levels/castle_grounds/1.rgba16.png
-levels/castle_grounds/2.rgba16.png
+# levels/castle_grounds/2.rgba16.png
 levels/castle_grounds/3.rgba16.png
 levels/castle_grounds/4.rgba16.png
 levels/castle_grounds/5.ia8.png
@@ -1302,7 +1302,7 @@ sound/sequences/sh/21_menu_file_select.m64
 sound/sequences/sh/22_cutscene_lakitu.m64
 sound/sequences/us/01_cutscene_collect_star.m64
 sound/sequences/us/02_menu_title_screen.m64
-sound/sequences/us/03_level_grass.m64
+# sound/sequences/us/03_level_grass.m64
 sound/sequences/us/04_level_inside_castle.m64
 sound/sequences/us/05_level_water.m64
 sound/sequences/us/06_level_hot.m64
@@ -1311,17 +1311,17 @@ sound/sequences/us/08_level_snow.m64
 sound/sequences/us/09_level_slide.m64
 sound/sequences/us/0A_level_spooky.m64
 sound/sequences/us/0B_event_piranha_plant.m64
-sound/sequences/us/0C_level_underground.m64
+# sound/sequences/us/0C_level_underground.m64
 sound/sequences/us/0D_menu_star_select.m64
-sound/sequences/us/0E_event_powerup.m64
+# sound/sequences/us/0E_event_powerup.m64
 sound/sequences/us/0F_event_metal_cap.m64
 sound/sequences/us/10_event_koopa_message.m64
 sound/sequences/us/11_level_koopa_road.m64
 sound/sequences/us/12_event_high_score.m64
 sound/sequences/us/13_event_merry_go_round.m64
-sound/sequences/us/14_event_race.m64
+# sound/sequences/us/14_event_race.m64
 sound/sequences/us/15_cutscene_star_spawn.m64
-sound/sequences/us/16_event_boss.m64
+# sound/sequences/us/16_event_boss.m64
 sound/sequences/us/17_cutscene_collect_key.m64
 sound/sequences/us/18_event_endless_stairs.m64
 sound/sequences/us/19_level_boss_koopa_final.m64
@@ -1332,7 +1332,7 @@ sound/sequences/us/1D_event_peach_message.m64
 sound/sequences/us/1E_cutscene_intro.m64
 sound/sequences/us/1F_cutscene_victory.m64
 sound/sequences/us/20_cutscene_ending.m64
-sound/sequences/us/21_menu_file_select.m64
+# sound/sequences/us/21_menu_file_select.m64
 sound/sequences/us/22_cutscene_lakitu.m64
 textures/cave/hmc_textures.00000.rgba16.png
 textures/cave/hmc_textures.01000.rgba16.png
