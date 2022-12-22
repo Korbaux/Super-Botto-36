@@ -1,6 +1,6 @@
 #ifndef SOUND_INIT_H
 #define SOUND_INIT_H
-
+#include "seq_ids.h"
 #include <PR/ultratypes.h>
 
 #include "macros.h"
@@ -43,5 +43,9 @@ void fadeout_cap_music(void);
 void stop_cap_music(void);
 void audio_game_loop_tick(void);
 void thread4_sound(UNUSED void *arg);
+
+void activate_song_name_display(u8 seqId);
+
+void draw_song_name(void);
 
 #endif // SOUND_INIT_H

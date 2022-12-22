@@ -581,7 +581,7 @@ test: $(ROM)
 test-pj64: $(ROM)
 	wine ~/Desktop/new64/Project64.exe $<
 # someone2639
-prelease: $(ROM)
+patch: $(ROM)
 	$(info Creating BPS patch...) \
 	@./flips-linux $(ROM) baserom.us.z64 botto.bps
 load: $(ROM)

@@ -83,7 +83,7 @@
 
 // Ingame Menu
 #define TEXT_PAUSE _("PAUSE") // Pause text, Castle Courses
-#define TEXT_HUD_CONGRATULATIONS _("CONGRATULATIONS") // Course Complete Text, Bowser Courses
+#define TEXT_HUD_CONGRATULATIONS _("CONGRATION") // Course Complete Text, Bowser Courses
 
 //Widescreen stuff
 #if defined(WIDE) && !defined(PUPPYCAM)
