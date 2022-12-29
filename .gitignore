@@ -79,35 +79,35 @@ actors/bookend/bookend_mouth.rgba16.png
 actors/bookend/bookend_pages.rgba16.png
 actors/bookend/bookend_spine.rgba16.png
 actors/bookend/bookend_tooth.rgba16.png
-actors/bowser/bowser_armband.rgba16.png
-actors/bowser/bowser_armband_spike.rgba16.png
+# actors/bowser/bowser_armband.rgba16.png
+# actors/bowser/bowser_armband_spike.rgba16.png
 actors/bowser/bowser_blue_eye_unused.rgba16.png
-actors/bowser/bowser_body.rgba16.png
-actors/bowser/bowser_chest.rgba16.png
-actors/bowser/bowser_claw_edge.rgba16.png
-actors/bowser/bowser_claw_horn_angle.rgba16.png
-actors/bowser/bowser_claw_horn_tooth.rgba16.png
-actors/bowser/bowser_eye_center_0.rgba16.png
-actors/bowser/bowser_eye_center_1.rgba16.png
-actors/bowser/bowser_eye_closed_0.rgba16.png
-actors/bowser/bowser_eye_closed_1.rgba16.png
-actors/bowser/bowser_eye_far_left_0.rgba16.png
-actors/bowser/bowser_eye_far_left_1.rgba16.png
-actors/bowser/bowser_eye_half_closed_0.rgba16.png
-actors/bowser/bowser_eye_half_closed_1.rgba16.png
-actors/bowser/bowser_eye_left_0.rgba16.png
-actors/bowser/bowser_eye_left_1.rgba16.png
-actors/bowser/bowser_eye_right_0.rgba16.png
-actors/bowser/bowser_eye_right_1.rgba16.png
-actors/bowser/bowser_eyebrow.rgba16.png
-actors/bowser/bowser_hair.rgba16.png
+# actors/bowser/bowser_body.rgba16.png
+# actors/bowser/bowser_chest.rgba16.png
+# actors/bowser/bowser_claw_edge.rgba16.png
+# actors/bowser/bowser_claw_horn_angle.rgba16.png
+# actors/bowser/bowser_claw_horn_tooth.rgba16.png
+# actors/bowser/bowser_eye_center_0.rgba16.png
+# actors/bowser/bowser_eye_center_1.rgba16.png
+# actors/bowser/bowser_eye_closed_0.rgba16.png
+# actors/bowser/bowser_eye_closed_1.rgba16.png
+# actors/bowser/bowser_eye_far_left_0.rgba16.png
+# actors/bowser/bowser_eye_far_left_1.rgba16.png
+# actors/bowser/bowser_eye_half_closed_0.rgba16.png
+# actors/bowser/bowser_eye_half_closed_1.rgba16.png
+# actors/bowser/bowser_eye_left_0.rgba16.png
+# actors/bowser/bowser_eye_left_1.rgba16.png
+# actors/bowser/bowser_eye_right_0.rgba16.png
+# actors/bowser/bowser_eye_right_1.rgba16.png
+# actors/bowser/bowser_eyebrow.rgba16.png
+# actors/bowser/bowser_hair.rgba16.png
 actors/bowser/bowser_mouth_unused.rgba16.png
-actors/bowser/bowser_muzzle.rgba16.png
-actors/bowser/bowser_nostrils.rgba16.png
-actors/bowser/bowser_shell.rgba16.png
-actors/bowser/bowser_shell_edge.rgba16.png
-actors/bowser/bowser_tongue.rgba16.png
-actors/bowser/bowser_upper_face.rgba16.png
+# actors/bowser/bowser_muzzle.rgba16.png
+# actors/bowser/bowser_nostrils.rgba16.png
+# actors/bowser/bowser_shell.rgba16.png
+# actors/bowser/bowser_shell_edge.rgba16.png
+# actors/bowser/bowser_tongue.rgba16.png
+# actors/bowser/bowser_upper_face.rgba16.png
 actors/bowser_flame/bowser_flame_0.rgba16.png
 actors/bowser_flame/bowser_flame_1.rgba16.png
 actors/bowser_flame/bowser_flame_10.rgba16.png
@@ -559,14 +559,14 @@ levels/castle_grounds/0.rgba16.png
 levels/castle_grounds/3.rgba16.png
 levels/castle_grounds/4.rgba16.png
 levels/castle_grounds/5.ia8.png
-levels/castle_inside/1.rgba16.png
+# levels/castle_inside/1.rgba16.png
 levels/castle_inside/10.rgba16.png
 levels/castle_inside/11.rgba16.png
-levels/castle_inside/12.rgba16.png
-levels/castle_inside/13.rgba16.png
-levels/castle_inside/14.rgba16.png
-levels/castle_inside/15.rgba16.png
-levels/castle_inside/16.ia16.png
+# levels/castle_inside/12.rgba16.png
+# levels/castle_inside/13.rgba16.png
+# levels/castle_inside/14.rgba16.png
+# levels/castle_inside/15.rgba16.png
+# levels/castle_inside/16.ia16.png
 levels/castle_inside/17.rgba16.png
 levels/castle_inside/18.rgba16.png
 levels/castle_inside/19.rgba16.png
@@ -1325,7 +1325,7 @@ sound/sequences/us/15_cutscene_star_spawn.m64
 sound/sequences/us/17_cutscene_collect_key.m64
 sound/sequences/us/18_event_endless_stairs.m64
 sound/sequences/us/19_level_boss_koopa_final.m64
-sound/sequences/us/1A_cutscene_credits.m64
+# sound/sequences/us/1A_cutscene_credits.m64
 sound/sequences/us/1B_event_solve_puzzle.m64
 sound/sequences/us/1C_event_toad_message.m64
 sound/sequences/us/1D_event_peach_message.m64
@@ -1440,11 +1440,11 @@ textures/grass/wf_textures.0B800.ia16.png
 textures/inside/inside_castle_textures.00000.rgba16.png
 textures/inside/inside_castle_textures.01000.rgba16.png
 textures/inside/inside_castle_textures.02000.rgba16.png
-textures/inside/inside_castle_textures.03000.rgba16.png
-textures/inside/inside_castle_textures.03800.rgba16.png
-textures/inside/inside_castle_textures.04000.rgba16.png
+# textures/inside/inside_castle_textures.03000.rgba16.png
+# textures/inside/inside_castle_textures.03800.rgba16.png
+# textures/inside/inside_castle_textures.04000.rgba16.png
 textures/inside/inside_castle_textures.04800.rgba16.png
-textures/inside/inside_castle_textures.05000.rgba16.png
+# textures/inside/inside_castle_textures.05000.rgba16.png
 textures/inside/inside_castle_textures.05800.rgba16.png
 textures/inside/inside_castle_textures.06000.rgba16.png
 textures/inside/inside_castle_textures.07000.rgba16.png
@@ -1567,23 +1567,23 @@ textures/mountain/ttm_textures.0A800.rgba16.png
 textures/mountain/ttm_textures.0B000.rgba16.png
 textures/mountain/ttm_textures.0B800.rgba16.png
 textures/mountain/ttm_textures.0C000.rgba16.png
-textures/outside/castle_grounds_textures.00000.rgba16.png
-textures/outside/castle_grounds_textures.00800.rgba16.png
-textures/outside/castle_grounds_textures.01000.rgba16.png
+# textures/outside/castle_grounds_textures.00000.rgba16.png
+# textures/outside/castle_grounds_textures.00800.rgba16.png
+# textures/outside/castle_grounds_textures.01000.rgba16.png
 textures/outside/castle_grounds_textures.02000.rgba16.png
-textures/outside/castle_grounds_textures.03000.rgba16.png
+# textures/outside/castle_grounds_textures.03000.rgba16.png
 textures/outside/castle_grounds_textures.03800.rgba16.png
 textures/outside/castle_grounds_textures.04000.rgba16.png
-textures/outside/castle_grounds_textures.04800.rgba16.png
+# textures/outside/castle_grounds_textures.04800.rgba16.png
 textures/outside/castle_grounds_textures.05800.rgba16.png
-textures/outside/castle_grounds_textures.06000.rgba16.png
-textures/outside/castle_grounds_textures.06800.rgba16.png
-textures/outside/castle_grounds_textures.07800.rgba16.png
+# textures/outside/castle_grounds_textures.06000.rgba16.png
+# textures/outside/castle_grounds_textures.06800.rgba16.png
+# textures/outside/castle_grounds_textures.07800.rgba16.png
 textures/outside/castle_grounds_textures.08000.rgba16.png
 # textures/outside/castle_grounds_textures.08800.rgba16.png
-textures/outside/castle_grounds_textures.09000.rgba16.png
+# textures/outside/castle_grounds_textures.09000.rgba16.png
 textures/outside/castle_grounds_textures.09800.rgba16.png
-textures/outside/castle_grounds_textures.0A000.rgba16.png
+# textures/outside/castle_grounds_textures.0A000.rgba16.png
 textures/outside/castle_grounds_textures.0A800.rgba16.png
 textures/outside/castle_grounds_textures.0B000.rgba16.png
 textures/outside/castle_grounds_textures.0B400.rgba16.png
@@ -2056,7 +2056,7 @@ textures/sky/rr_textures.05800.rgba16.png
 textures/sky/rr_textures.06000.rgba16.png
 textures/sky/rr_textures.07000.rgba16.png
 textures/sky/rr_textures.07800.rgba16.png
-textures/sky/rr_textures.08000.rgba16.png
+# textures/sky/rr_textures.08000.rgba16.png
 textures/skyboxes/bbh.png
 textures/skyboxes/bidw.png
 textures/skyboxes/bitfs.png
