@@ -49,10 +49,12 @@ build/*
 *.mio0
 *.z64
 *.map
+*.bps
 .assets-local.txt
 
 # Vanilla Assets.
 # You can allow an asset to be committed by deleting one of these lines.
+flips-linux
 actors/amp/amp_body.rgba16.png
 actors/amp/amp_electricity.rgba16.png
 actors/amp/amp_eyes.rgba16.png
@@ -580,8 +582,8 @@ levels/castle_inside/24.rgba16.png
 levels/castle_inside/24_us.rgba16.png
 levels/castle_inside/25.rgba16.png
 levels/castle_inside/26.rgba16.png
-levels/castle_inside/27.rgba16.png
-levels/castle_inside/28.rgba16.png
+# levels/castle_inside/27.rgba16.png
+# levels/castle_inside/28.rgba16.png
 # levels/castle_inside/29.rgba16.png
 # levels/castle_inside/3.rgba16.png
 levels/castle_inside/30.rgba16.png
@@ -593,9 +595,9 @@ levels/castle_inside/35.rgba16.png
 levels/castle_inside/36.rgba16.png
 levels/castle_inside/37.rgba16.png
 levels/castle_inside/38.rgba16.png
-levels/castle_inside/39.rgba16.png
+# levels/castle_inside/39.rgba16.png
 levels/castle_inside/4.rgba16.png
-levels/castle_inside/40.rgba16.png
+# levels/castle_inside/40.rgba16.png
 levels/castle_inside/5.rgba16.png
 levels/castle_inside/6.rgba16.png
 levels/castle_inside/7.rgba16.png
@@ -1300,7 +1302,7 @@ sound/sequences/sh/1F_cutscene_victory.m64
 sound/sequences/sh/20_cutscene_ending.m64
 sound/sequences/sh/21_menu_file_select.m64
 sound/sequences/sh/22_cutscene_lakitu.m64
-sound/sequences/us/01_cutscene_collect_star.m64
+# sound/sequences/us/01_cutscene_collect_star.m64
 sound/sequences/us/02_menu_title_screen.m64
 # sound/sequences/us/03_level_grass.m64
 sound/sequences/us/04_level_inside_castle.m64
@@ -1443,16 +1445,16 @@ textures/inside/inside_castle_textures.02000.rgba16.png
 # textures/inside/inside_castle_textures.03000.rgba16.png
 # textures/inside/inside_castle_textures.03800.rgba16.png
 # textures/inside/inside_castle_textures.04000.rgba16.png
-textures/inside/inside_castle_textures.04800.rgba16.png
+# textures/inside/inside_castle_textures.04800.rgba16.png
 # textures/inside/inside_castle_textures.05000.rgba16.png
-textures/inside/inside_castle_textures.05800.rgba16.png
-textures/inside/inside_castle_textures.06000.rgba16.png
-textures/inside/inside_castle_textures.07000.rgba16.png
+# textures/inside/inside_castle_textures.05800.rgba16.png
+# textures/inside/inside_castle_textures.06000.rgba16.png
+# textures/inside/inside_castle_textures.07000.rgba16.png
 textures/inside/inside_castle_textures.08000.rgba16.png
 textures/inside/inside_castle_textures.08800.rgba16.png
-textures/inside/inside_castle_textures.09000.rgba16.png
-textures/inside/inside_castle_textures.0A000.rgba16.png
-textures/inside/inside_castle_textures.0B000.rgba16.png
+# textures/inside/inside_castle_textures.09000.rgba16.png
+# textures/inside/inside_castle_textures.0A000.rgba16.png
+# textures/inside/inside_castle_textures.0B000.rgba16.png
 textures/inside/inside_castle_textures.0B800.rgba16.png
 # textures/intro_raw/hand_closed.rgba16.png
 # textures/intro_raw/hand_open.rgba16.png

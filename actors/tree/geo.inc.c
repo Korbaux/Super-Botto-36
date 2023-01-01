@@ -16,6 +16,23 @@ const GeoLayout bubbly_tree_geo[] = {
    GEO_END(),
 };
 
+const GeoLayout bubbly_tree_alt_geo[] = {
+   GEO_CULLING_RADIUS(800),
+   GEO_OPEN_NODE(),
+#ifdef OBJ_OPACITY_BY_CAM_DIST
+      GEO_ASM(GEO_TRANSPARENCY_MODE_INTER, geo_update_layer_transparency),
+      GEO_SWITCH_CASE(2, geo_switch_anim_state),
+      GEO_OPEN_NODE(),
+#endif
+         GEO_DISPLAY_LIST(LAYER_ALPHA, tree_seg3_dl_bubbly_alt),
+#ifdef OBJ_OPACITY_BY_CAM_DIST
+         GEO_DISPLAY_LIST(LAYER_TRANSPARENT_INTER, tree_seg3_dl_bubbly_alt_transparent),
+      GEO_CLOSE_NODE(),
+#endif
+   GEO_CLOSE_NODE(),
+   GEO_END(),
+};
+
 // 0x16001000
 const GeoLayout spiky_tree_geo[] = {
    GEO_CULLING_RADIUS(800),
@@ -34,6 +51,24 @@ const GeoLayout spiky_tree_geo[] = {
    GEO_END(),
 };
 
+// 0x16001000
+const GeoLayout spiky_tree_alt_geo[] = {
+   GEO_CULLING_RADIUS(800),
+   GEO_OPEN_NODE(),
+#ifdef OBJ_OPACITY_BY_CAM_DIST
+      GEO_ASM(GEO_TRANSPARENCY_MODE_INTER, geo_update_layer_transparency),
+      GEO_SWITCH_CASE(2, geo_switch_anim_state),
+      GEO_OPEN_NODE(),
+#endif
+         GEO_DISPLAY_LIST(LAYER_ALPHA, tree_seg3_dl_spiky_alt),
+#ifdef OBJ_OPACITY_BY_CAM_DIST
+         GEO_DISPLAY_LIST(LAYER_TRANSPARENT_INTER, tree_seg3_dl_spiky_alt_transparent),
+      GEO_CLOSE_NODE(),
+#endif
+   GEO_CLOSE_NODE(),
+   GEO_END(),
+};
+
 // 0x16001018
 const GeoLayout snow_tree_geo[] = {
    GEO_CULLING_RADIUS(800),
@@ -46,6 +81,24 @@ const GeoLayout snow_tree_geo[] = {
          GEO_DISPLAY_LIST(LAYER_ALPHA, tree_seg3_dl_snowy_pine),
 #ifdef OBJ_OPACITY_BY_CAM_DIST
          GEO_DISPLAY_LIST(LAYER_TRANSPARENT_INTER, tree_seg3_dl_snowy_pine_transparent),
+      GEO_CLOSE_NODE(),
+#endif
+   GEO_CLOSE_NODE(),
+   GEO_END(),
+};
+
+// 0x16001018
+const GeoLayout snow_tree_alt_geo[] = {
+   GEO_CULLING_RADIUS(800),
+   GEO_OPEN_NODE(),
+#ifdef OBJ_OPACITY_BY_CAM_DIST
+      GEO_ASM(GEO_TRANSPARENCY_MODE_INTER, geo_update_layer_transparency),
+      GEO_SWITCH_CASE(2, geo_switch_anim_state),
+      GEO_OPEN_NODE(),
+#endif
+         GEO_DISPLAY_LIST(LAYER_ALPHA, tree_seg3_dl_snowy_pine_alt),
+#ifdef OBJ_OPACITY_BY_CAM_DIST
+         GEO_DISPLAY_LIST(LAYER_TRANSPARENT_INTER, tree_seg3_dl_snowy_pine_alt_transparent),
       GEO_CLOSE_NODE(),
 #endif
    GEO_CLOSE_NODE(),

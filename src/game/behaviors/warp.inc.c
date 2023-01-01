@@ -31,6 +31,6 @@ void bhv_fading_warp_loop() {
         }
         o->hitboxHeight = 50.0f;
     }
-
+    spawn_object_relative(0, 0, 87.5f, 0, o, MODEL_NONE, bhvSparkleSpawn);
     o->oInteractStatus = INT_STATUS_NONE;
 }
