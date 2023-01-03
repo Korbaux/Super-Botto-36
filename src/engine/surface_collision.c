@@ -551,9 +551,9 @@ f32 find_floor(f32 xPos, f32 yPos, f32 zPos, struct Surface **pfloor) {
     //! (Parallel Universes) Because position is casted to an s16, reaching higher
     //  float locations can return floors despite them not existing there.
     //  (Dynamic floors will unload due to the range.)
-    s32 x = xPos;
-    s32 y = yPos;
-    s32 z = zPos;
+    s16 x = xPos;
+    s16 y = yPos;
+    s16 z = zPos;
 
     *pfloor = NULL;
 

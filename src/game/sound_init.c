@@ -132,18 +132,18 @@ const char* seqNames[SEQ_COUNT] = {
 	"", // SEQ_EVENT_CUTSCENE_COLLECT_STAR,  // 0x01
 	"", // SEQ_MENU_TITLE_SCREEN,            // 0x02
 	"Main Menu (Hotel Mario)", // SEQ_LEVEL_GRASS, // 0x03
-	"", // SEQ_LEVEL_INSIDE_CASTLE,          // 0x04
-	"", // SEQ_LEVEL_WATER,                  // 0x05
+	"Save Hut (Kirby Super Star)", // SEQ_LEVEL_INSIDE_CASTLE, // 0x04
+	"Trance Logic", // SEQ_LEVEL_WATER,      // 0x05
 	"", // SEQ_LEVEL_HOT,                    // 0x06
 	"", // SEQ_LEVEL_BOSS_KOOPA,             // 0x07
 	"", // SEQ_LEVEL_SNOW,                   // 0x08
 	"Mr. Brightside", // SEQ_LEVEL_SLIDE,    // 0x09
-	"", // SEQ_LEVEL_SPOOKY,                 // 0x0A
+	"Moonlight Sonata (1st Movement)", // SEQ_LEVEL_SPOOKY, // 0x0A
 	"", // SEQ_EVENT_PIRANHA_PLANT,          // 0x0B
 	"Billie Jean", // SEQ_LEVEL_UNDERGROUND, // 0x0C
 	"", // SEQ_MENU_STAR_SELECT,             // 0x0D
 	"PepsiMan", // SEQ_EVENT_POWERUP,        // 0x0E
-	"", // SEQ_EVENT_METAL_CAP,              // 0x0F
+	"Targets! (SSBM)", // SEQ_EVENT_METAL_CAP, // 0x0F
 	"", // SEQ_EVENT_KOOPA_MESSAGE,          // 0x10
 	"", // SEQ_LEVEL_KOOPA_ROAD,             // 0x11
 	"", // SEQ_EVENT_HIGH_SCORE,             // 0x12
@@ -154,7 +154,7 @@ const char* seqNames[SEQ_COUNT] = {
 	"", // SEQ_EVENT_CUTSCENE_COLLECT_KEY,   // 0x17
 	"", // SEQ_EVENT_ENDLESS_STAIRS,         // 0x18
 	"", // SEQ_LEVEL_BOSS_KOOPA_FINAL,       // 0x19
-	"", // SEQ_EVENT_CUTSCENE_CREDITS,       // 0x1A
+	"Scatman's World, BHIYS", // SEQ_EVENT_CUTSCENE_CREDITS, // 0x1A
 	"", // SEQ_EVENT_SOLVE_PUZZLE,           // 0x1B
 	"", // SEQ_EVENT_TOAD_MESSAGE,           // 0x1C
 	"", // SEQ_EVENT_PEACH_MESSAGE,          // 0x1D
@@ -171,18 +171,18 @@ const char* seqAuthors[SEQ_COUNT] = {
 	"", // SEQ_EVENT_CUTSCENE_COLLECT_STAR,  // 0x01
 	"", // SEQ_MENU_TITLE_SCREEN,            // 0x02
 	"Max Steiner", // SEQ_LEVEL_GRASS,       // 0x03
-	"", // SEQ_LEVEL_INSIDE_CASTLE,          // 0x04
-	"", // SEQ_LEVEL_WATER,                  // 0x05
+	"Exact Person Unknown", // SEQ_LEVEL_INSIDE_CASTLE, // 0x04
+	"who cares", // SEQ_LEVEL_WATER,         // 0x05
 	"", // SEQ_LEVEL_HOT,                    // 0x06
 	"", // SEQ_LEVEL_BOSS_KOOPA,             // 0x07
 	"", // SEQ_LEVEL_SNOW,                   // 0x08
 	"The Killers", // SEQ_LEVEL_SLIDE,       // 0x09
-	"", // SEQ_LEVEL_SPOOKY,                 // 0x0A
+	"Beethoven", // SEQ_LEVEL_SPOOKY,                 // 0x0A
 	"", // SEQ_EVENT_PIRANHA_PLANT,          // 0x0B
 	"Michael Jackson", // SEQ_LEVEL_UNDERGROUND, // 0x0C
 	"", // SEQ_MENU_STAR_SELECT,             // 0x0D
 	"Pepsi", // SEQ_EVENT_POWERUP,           // 0x0E
-	"", // SEQ_EVENT_METAL_CAP,              // 0x0F
+	"Nintendo", // SEQ_EVENT_METAL_CAP, // 0x0F
 	"", // SEQ_EVENT_KOOPA_MESSAGE,          // 0x10
 	"", // SEQ_LEVEL_KOOPA_ROAD,             // 0x11
 	"", // SEQ_EVENT_HIGH_SCORE,             // 0x12
@@ -193,7 +193,7 @@ const char* seqAuthors[SEQ_COUNT] = {
 	"", // SEQ_EVENT_CUTSCENE_COLLECT_KEY,   // 0x17
 	"", // SEQ_EVENT_ENDLESS_STAIRS,         // 0x18
 	"", // SEQ_LEVEL_BOSS_KOOPA_FINAL,       // 0x19
-	"", // SEQ_EVENT_CUTSCENE_CREDITS,       // 0x1A
+	"Scatman John, TMBG", // SEQ_EVENT_CUTSCENE_CREDITS, // 0x1A
 	"", // SEQ_EVENT_SOLVE_PUZZLE,           // 0x1B
 	"", // SEQ_EVENT_TOAD_MESSAGE,           // 0x1C
 	"", // SEQ_EVENT_PEACH_MESSAGE,          // 0x1D
@@ -361,6 +361,7 @@ void play_infinite_stairs_music(void) {
  * Called from threads: thread5_game_loop
  */
 void set_background_music(u16 a, u16 seqArgs, s16 fadeTimer) {
+    activate_song_name_display(seqArgs & 0xff);
     if (gResetTimer == 0 && seqArgs != sCurrentMusic) {
         if (gCurrCreditsEntry != NULL) {
             sound_reset(7);
@@ -374,7 +375,6 @@ void set_background_music(u16 a, u16 seqArgs, s16 fadeTimer) {
         {
             play_music(SEQ_PLAYER_LEVEL, seqArgs, fadeTimer);
             sCurrentMusic = seqArgs;
-            activate_song_name_display(seqArgs & 0xff);
         }
     }
 }

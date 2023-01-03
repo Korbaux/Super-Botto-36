@@ -1305,18 +1305,18 @@ sound/sequences/sh/22_cutscene_lakitu.m64
 # sound/sequences/us/01_cutscene_collect_star.m64
 sound/sequences/us/02_menu_title_screen.m64
 # sound/sequences/us/03_level_grass.m64
-sound/sequences/us/04_level_inside_castle.m64
-sound/sequences/us/05_level_water.m64
+# sound/sequences/us/04_level_inside_castle.m64
+# sound/sequences/us/05_level_water.m64
 sound/sequences/us/06_level_hot.m64
 sound/sequences/us/07_level_boss_koopa.m64
 sound/sequences/us/08_level_snow.m64
-sound/sequences/us/09_level_slide.m64
-sound/sequences/us/0A_level_spooky.m64
+# sound/sequences/us/09_level_slide.m64
+# sound/sequences/us/0A_level_spooky.m64
 sound/sequences/us/0B_event_piranha_plant.m64
 # sound/sequences/us/0C_level_underground.m64
 sound/sequences/us/0D_menu_star_select.m64
 # sound/sequences/us/0E_event_powerup.m64
-sound/sequences/us/0F_event_metal_cap.m64
+# sound/sequences/us/0F_event_metal_cap.m64
 sound/sequences/us/10_event_koopa_message.m64
 sound/sequences/us/11_level_koopa_road.m64
 sound/sequences/us/12_event_high_score.m64

@@ -8,7 +8,7 @@
 
 // The distance from Mario at which coin formations spawn their coins. Vanilla is 2000.0f.
 // Set this to o->oDrawingDistance for a more reasonable range at the cost of performance.
-#define COIN_FORMATION_DISTANCE 2000.0f
+#define COIN_FORMATION_DISTANCE o->oDrawingDistance
 
 // Moving Coins flicker and disappear when they hit lava instead of being instantly deleted.
 #define COIN_LAVA_FLICKER
@@ -36,7 +36,7 @@
 // -- MR I --
 
 // Enables Mr I to shoot his particle in any direction.
-// #define MR_I_PITCH_SHOOTING
+#define MR_I_PITCH_SHOOTING
 
 // -- WATER RING --
 
@@ -56,7 +56,7 @@
 // -- PLATFORM ON TRACK --
 
 // Allows the speed of a platform on a track to be controlled by standing near the front or back of it.
-// #define CONTROLLABLE_PLATFORM_SPEED
+#define CONTROLLABLE_PLATFORM_SPEED
 
 // -- CHAIN CHOMP --
 

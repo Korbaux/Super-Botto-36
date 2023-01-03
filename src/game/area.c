@@ -387,6 +387,8 @@ void render_game(void) {
                       SCREEN_HEIGHT - gBorderHeight);
         render_hud();
 
+        draw_song_name();
+
         gDPSetScissor(gDisplayListHead++, G_SC_NON_INTERLACE, 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
         render_text_labels();
         do_cutscene_handler();

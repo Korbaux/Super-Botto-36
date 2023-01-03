@@ -5,14 +5,14 @@
  *********************/
 
 // Changes Mario's ground turn radius by making it dependent on the analog stick magnitude and speed.
-// #define VELOCITY_BASED_TURN_SPEED
+#define VELOCITY_BASED_TURN_SPEED
 
 // Allows Mario to easily side flip when moving forwards at any speed.
  #define SIDE_FLIP_AT_LOW_SPEEDS
 
 // Allows Mario to aim towards a new direction at the end of turning around,
 // and allows Mario to turn around multiple times in a row.
-// #define RESET_DIRECTION_WHEN_TURNING_AROUND
+#define RESET_DIRECTION_WHEN_TURNING_AROUND
 
 // Improved hanging:
 // - Doesn't require holding down the A button.

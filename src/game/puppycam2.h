@@ -45,13 +45,14 @@
 
 struct gPuppyOptions
 {
-    s16 analogue;
+    u16 analogue;
     s16 sensitivityX;
     s16 sensitivityY;
-    s16 invertX;
-    s16 invertY;
+    u16 invertX;
+    u16 invertY;
     s16 turnAggression;
     s16 inputType;
+    s16 deadzone;
 };
 
 struct gPuppyStruct

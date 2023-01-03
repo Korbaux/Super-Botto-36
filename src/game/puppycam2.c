@@ -38,7 +38,6 @@ static inline float softClamp(float x, float a, float b) {
 }
 
 #define DECELERATION 0.66f
-#define DEADZONE 20
 #define SCRIPT_MEMORY_POOL 0x1000
 
 struct gPuppyStruct gPuppyCam;
@@ -61,7 +60,7 @@ static unsigned char  gPCFlagStringsDE[][64] = {{OPTION_DISABLED_DE}, {OPTION_EN
 static unsigned char  gPCToggleStringsFR[][64] = {{NC_BUTTON_FR}, {NC_BUTTON2_FR}, {NC_OPTION_FR}, {NC_HIGHLIGHT_L}, {NC_HIGHLIGHT_R},};
 static unsigned char  gPCToggleStringsDE[][64] = {{NC_BUTTON_DE}, {NC_BUTTON2_DE}, {NC_OPTION_DE}, {NC_HIGHLIGHT_L}, {NC_HIGHLIGHT_R},};
 #endif
-static unsigned char  gPCOptionStringsEN[][64] = {{NC_ANALOGUE_EN}, {NC_CAMX_EN}, {NC_CAMY_EN}, {NC_INVERTX_EN}, {NC_INVERTY_EN}, {NC_CAMC_EN}, {NC_SCHEME_EN}, {NC_WIDE_EN}, {OPTION_LANGUAGE_EN}};
+static unsigned char  gPCOptionStringsEN[][64] = {{NC_ANALOGUE_EN}, {NC_CAMX_EN}, {NC_CAMY_EN}, {NC_INVERTX_EN}, {NC_INVERTY_EN}, {NC_CAMC_EN}, {NC_SCHEME_EN}, {NC_WIDE_EN}, {OPTION_LANGUAGE_EN}, {OPTION_DEADZONE_EN}};
 static unsigned char  gPCFlagStringsEN[][64] = {{OPTION_DISABLED_EN}, {OPTION_ENABLED_EN}, {OPTION_SCHEME1_EN}, {OPTION_SCHEME2_EN}, {OPTION_SCHEME3_EN}, {TEXT_ENGLISH}, {TEXT_FRENCH}, {TEXT_GERMAN},};
 static unsigned char  gPCToggleStringsEN[][64] = {{NC_BUTTON_EN}, {NC_BUTTON2_EN}, {NC_OPTION_EN}, {NC_HIGHLIGHT_L}, {NC_HIGHLIGHT_R},};
 
@@ -96,6 +95,7 @@ static const struct gPCOptionStruct gPCOptions[] = { //If the min and max are 0 
     {/*Option Name*/ 3, /*Option Variable*/ &gPuppyCam.options.invertX,        /*Option Value Text Start*/ 0, /*Option Minimum*/ FALSE, /*Option Maximum*/ TRUE},
     {/*Option Name*/ 4, /*Option Variable*/ &gPuppyCam.options.invertY,        /*Option Value Text Start*/ 0, /*Option Minimum*/ FALSE, /*Option Maximum*/ TRUE},
     {/*Option Name*/ 5, /*Option Variable*/ &gPuppyCam.options.turnAggression, /*Option Value Text Start*/ 255, /*Option Minimum*/ 0, /*Option Maximum*/ 100},
+    {/*Option Name*/ 9, /*Option Variable*/ &gPuppyCam.options.deadzone, /*Option Value Text Start*/ 255, /*Option Minimum*/ 0, /*Option Maximum*/ 75},
 };
 
 u8 gPCOptionCap = sizeof(gPCOptions) / sizeof(struct gPCOptionStruct); //How many options there are in newcam_uptions.
@@ -116,11 +116,11 @@ static void puppycam_analogue_stick(void) {
     gPuppyCam.stick2[0] = -gPlayer2Controller->rawStickX;
     gPuppyCam.stick2[1] =  gPlayer2Controller->rawStickY;
 
-    if (ABS(gPuppyCam.stick2[0]) < DEADZONE) {
+    if (ABS(gPuppyCam.stick2[0]) < gPuppyCam.options.deadzone) {
         gPuppyCam.stick2[0] = 0;
         gPuppyCam.stickN[0] = 0;
     }
-    if (ABS(gPuppyCam.stick2[1]) < DEADZONE) {
+    if (ABS(gPuppyCam.stick2[1]) < gPuppyCam.options.deadzone) {
         gPuppyCam.stick2[1] = 0;
         gPuppyCam.stickN[1] = 0;
     }
@@ -135,13 +135,11 @@ void puppycam_default_config(void) {
     gPuppyCam.options.turnAggression = 50;
     gPuppyCam.options.analogue       = 0;
     gPuppyCam.options.inputType      = 1;
+    gPuppyCam.options.deadzone       = 50;
 }
 
 // Initial setup. Ran at the beginning of the game and never again.
 void puppycam_boot(void) {
-    gPuppyCam.zoomPoints[0] = 600;
-    gPuppyCam.zoomPoints[1] = 1000;
-    gPuppyCam.zoomPoints[2] = 1500;
     gPuppyCam.povHeight     = 125;
     gPuppyCam.stick2[0]     = 0;
     gPuppyCam.stick2[1]     = 0;
@@ -150,7 +148,9 @@ void puppycam_boot(void) {
     gPuppyMemoryPool        = mem_pool_init(MAX_PUPPYCAM_VOLUMES * sizeof(struct sPuppyVolume), MEMORY_POOL_LEFT);
     gPuppyVolumeCount       = 0;
     gPuppyCam.enabled       = 1;
-
+    gPuppyCam.zoomPoints[0] = 600;
+    gPuppyCam.zoomPoints[1] = 1000;
+    gPuppyCam.zoomPoints[2] = 1500;
     puppycam_get_save();
 }
 
@@ -627,12 +627,12 @@ static void puppycam_input_hold_preset3(void) {
         gPuppyCam.flags &= ~PUPPYCAM_BEHAVIOUR_COLLISION;
 
         // Handles continuous movement as normal, as long as the button's held.
-        if (ABS(gPlayer1Controller->rawStickX) > DEADZONE) {
+        if (ABS(gPlayer1Controller->rawStickX) > gPuppyCam.options.deadzone) {
             gPuppyCam.yawAcceleration -= (gPuppyCam.options.sensitivityX / 100.f) * stickMag[0];
         } else {
             gPuppyCam.yawAcceleration = 0;
         }
-        if (ABS(gPlayer1Controller->rawStickY) > DEADZONE) {
+        if (ABS(gPlayer1Controller->rawStickY) > gPuppyCam.options.deadzone) {
             gPuppyCam.pitchAcceleration -= (gPuppyCam.options.sensitivityY / 100.f) * stickMag[1];
         } else {
             gPuppyCam.pitchAcceleration = approach_f32_asymptotic(gPuppyCam.pitchAcceleration, 0, DECELERATION);
@@ -645,12 +645,12 @@ static void puppycam_input_hold_preset3(void) {
         if (gPuppyCam.mode3Flags & PUPPYCAM_MODE3_ZOOMED_MED) gPuppyCam.pitchTarget = approach_s32(gPuppyCam.pitchTarget, 0x3800, 0x200, 0x200);
         if (gPuppyCam.mode3Flags & PUPPYCAM_MODE3_ZOOMED_OUT) gPuppyCam.pitchTarget = approach_s32(gPuppyCam.pitchTarget, 0x3000, 0x200, 0x200);
 
-        if ((gPlayer1Controller->buttonPressed & L_CBUTTONS && !gPuppyCam.options.analogue) || (gPuppyCam.stick2[0] > DEADZONE && !gPuppyCam.stickN[0])) {
+        if ((gPlayer1Controller->buttonPressed & L_CBUTTONS && !gPuppyCam.options.analogue) || (gPuppyCam.stick2[0] > gPuppyCam.options.deadzone && !gPuppyCam.stickN[0])) {
             gPuppyCam.stickN[0]  = 1;
             gPuppyCam.yawTarget -= 0x2000;
             play_sound(SOUND_MENU_CAMERA_TURN,gGlobalSoundSource);
         }
-        if ((gPlayer1Controller->buttonPressed & R_CBUTTONS && !gPuppyCam.options.analogue) || (gPuppyCam.stick2[0] < -DEADZONE && !gPuppyCam.stickN[0])) {
+        if ((gPlayer1Controller->buttonPressed & R_CBUTTONS && !gPuppyCam.options.analogue) || (gPuppyCam.stick2[0] < -gPuppyCam.options.deadzone && !gPuppyCam.stickN[0])) {
             gPuppyCam.stickN[0]  = 1;
             gPuppyCam.yawTarget += 0x2000;
             play_sound(SOUND_MENU_CAMERA_TURN,gGlobalSoundSource);
@@ -658,7 +658,7 @@ static void puppycam_input_hold_preset3(void) {
     }
 
     // Handles zooming in. Works just like vanilla.
-    if ((gPlayer1Controller->buttonPressed & U_CBUTTONS && !gPuppyCam.options.analogue) || (gPuppyCam.stick2[1] > DEADZONE && !gPuppyCam.stickN[1])) {
+    if ((gPlayer1Controller->buttonPressed & U_CBUTTONS && !gPuppyCam.options.analogue) || (gPuppyCam.stick2[1] > gPuppyCam.options.deadzone && !gPuppyCam.stickN[1])) {
         if ((gPuppyCam.mode3Flags & PUPPYCAM_MODE3_ZOOMED_MED) && !(gMarioState->action & ACT_FLAG_AIR) && !(gMarioState->action & ACT_FLAG_SWIMMING)) {
             gPuppyCam.stickN[1]   = 1;
             gPuppyCam.mode3Flags |= PUPPYCAM_MODE3_ZOOMED_IN;
@@ -675,7 +675,7 @@ static void puppycam_input_hold_preset3(void) {
 
             play_sound(SOUND_MENU_CAMERA_ZOOM_IN, gGlobalSoundSource);
         }
-    } else  if ((gPlayer1Controller->buttonPressed & D_CBUTTONS && !gPuppyCam.options.analogue) || (gPuppyCam.stick2[1] < -DEADZONE && !gPuppyCam.stickN[1])) { // Otherwise handle zooming out.
+    } else  if ((gPlayer1Controller->buttonPressed & D_CBUTTONS && !gPuppyCam.options.analogue) || (gPuppyCam.stick2[1] < -gPuppyCam.options.deadzone && !gPuppyCam.stickN[1])) { // Otherwise handle zooming out.
         if (gPuppyCam.mode3Flags & PUPPYCAM_MODE3_ZOOMED_MED) {
             gPuppyCam.stickN[1] = 1;
             gPuppyCam.mode3Flags |= PUPPYCAM_MODE3_ZOOMED_OUT;
@@ -685,7 +685,7 @@ static void puppycam_input_hold_preset3(void) {
             play_sound(SOUND_MENU_CAMERA_ZOOM_OUT, gGlobalSoundSource);
         }
     }
-    if ((gPlayer1Controller->buttonPressed & D_CBUTTONS && !gPuppyCam.options.analogue) || (gPuppyCam.stick2[1] < -DEADZONE && !gPuppyCam.stickN[1]) ||
+    if ((gPlayer1Controller->buttonPressed & D_CBUTTONS && !gPuppyCam.options.analogue) || (gPuppyCam.stick2[1] < -gPuppyCam.options.deadzone && !gPuppyCam.stickN[1]) ||
         gPlayer1Controller->buttonPressed & B_BUTTON || gPlayer1Controller->buttonPressed & A_BUTTON) {
         if (gPuppyCam.mode3Flags & PUPPYCAM_MODE3_ZOOMED_IN) {
             gPuppyCam.stickN[1]   = 1;
@@ -759,7 +759,7 @@ static void puppycam_input_press(void) {
     if (!(gPuppyCam.flags & PUPPYCAM_BEHAVIOUR_YAW_ROTATION)) {
         return;
     }
-    if ((gPlayer1Controller->buttonPressed & L_CBUTTONS && !gPuppyCam.options.analogue) || (gPuppyCam.stickN[0] == 0 && gPuppyCam.stick2[0] < -DEADZONE)) {
+    if ((gPlayer1Controller->buttonPressed & L_CBUTTONS && !gPuppyCam.options.analogue) || (gPuppyCam.stickN[0] == 0 && gPuppyCam.stick2[0] < -gPuppyCam.options.deadzone)) {
         gPuppyCam.stickN[0] = 1;
         if (gPuppyCam.flags & PUPPYCAM_BEHAVIOUR_INPUT_8DIR) {
             gPuppyCam.yawTarget -= 0x2000 * ivX;
@@ -769,7 +769,7 @@ static void puppycam_input_press(void) {
         play_sound(SOUND_MENU_CAMERA_ZOOM_IN,gGlobalSoundSource);
     }
 
-    if ((gPlayer1Controller->buttonPressed & R_CBUTTONS && !gPuppyCam.options.analogue) || (gPuppyCam.stickN[0] == 0 && gPuppyCam.stick2[0] > DEADZONE)) {
+    if ((gPlayer1Controller->buttonPressed & R_CBUTTONS && !gPuppyCam.options.analogue) || (gPuppyCam.stickN[0] == 0 && gPuppyCam.stick2[0] > gPuppyCam.options.deadzone)) {
         gPuppyCam.stickN[0] = 1;
         if (gPuppyCam.flags & PUPPYCAM_BEHAVIOUR_INPUT_8DIR) {
             gPuppyCam.yawTarget += 0x2000 * ivX;
@@ -786,11 +786,11 @@ static void puppycam_input_press(void) {
 
 void puppycam_debug_view(void) {
     if (gPuppyCam.debugFlags & PUPPYDEBUG_LOCK_CONTROLS) {
-        if (ABS(gPlayer1Controller->rawStickX) > DEADZONE) {
+        if (ABS(gPlayer1Controller->rawStickX) > gPuppyCam.options.deadzone) {
             gPuppyCam.pos[0] += (gPlayer1Controller->rawStickX / 4) * -sins(gPuppyCam.yawTarget);
             gPuppyCam.pos[2] += (gPlayer1Controller->rawStickX / 4) *  coss(gPuppyCam.yawTarget);
         }
-        if (ABS(gPlayer1Controller->rawStickY) > DEADZONE) {
+        if (ABS(gPlayer1Controller->rawStickY) > gPuppyCam.options.deadzone) {
             gPuppyCam.pos[0] += (gPlayer1Controller->rawStickY / 4) *  coss(gPuppyCam.yawTarget);
             gPuppyCam.pos[1] += (gPlayer1Controller->rawStickY / 4) *  sins(gPuppyCam.pitchTarget);
             gPuppyCam.pos[2] += (gPlayer1Controller->rawStickY / 4) *  sins(gPuppyCam.yawTarget);
