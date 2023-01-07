@@ -357,11 +357,11 @@ actors/peach/peach_lips_scrunched.rgba16.png
 actors/peach/peach_nostril.rgba16.png
 actors/pebble/pebble.rgba16.png
 actors/penguin/penguin_beak.rgba16.png
-actors/penguin/penguin_eye_angry.rgba16.png
-actors/penguin/penguin_eye_angry_unused.rgba16.png
-actors/penguin/penguin_eye_closed.rgba16.png
-actors/penguin/penguin_eye_half_closed.rgba16.png
-actors/penguin/penguin_eye_open.rgba16.png
+# actors/penguin/penguin_eye_angry.rgba16.png
+# actors/penguin/penguin_eye_angry_unused.rgba16.png
+# actors/penguin/penguin_eye_closed.rgba16.png
+# actors/penguin/penguin_eye_half_closed.rgba16.png
+# actors/penguin/penguin_eye_open.rgba16.png
 actors/piranha_plant/piranha_plant_bottom_lip.rgba16.png
 actors/piranha_plant/piranha_plant_leaf.rgba16.png
 actors/piranha_plant/piranha_plant_skin.rgba16.png
