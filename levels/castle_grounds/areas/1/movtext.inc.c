@@ -24,7 +24,7 @@ static Movtex castle_grounds_movtex_lake_water_data[] = {
     MOV_TEX_4_BOX_TRIS(8230,  -58),
     MOV_TEX_ROT(     ROTATE_CLOCKWISE),
     MOV_TEX_ALPHA(    0x96),
-    MOV_TEX_DEFINE(  TEXTURE_WATER),
+    MOV_TEX_DEFINE(  TEXTURE_LAVA),
     MOV_TEX_END(),
 };
 
@@ -36,7 +36,7 @@ const struct MovtexQuadCollection castle_grounds_movtex_water[] = {
 };
 
 Movtex castle_grounds_movtex_tris_waterfall[] = {
-    MOV_TEX_SPD(    70),
+    MOV_TEX_SPD(    -70),
     MOV_TEX_TRIS(-4469, -800, -6413, 0, 0),
     MOV_TEX_TRIS(-5525, 1171, -7026, 2, 0),
     MOV_TEX_TRIS(-6292, 2028, -7463, 4, 0),

@@ -136,7 +136,7 @@ actors/bubba/bubba_fins.rgba16.png
 actors/bubba/bubba_scales.rgba16.png
 actors/bubba/bubba_sunglasses.rgba16.png
 actors/bubble/bubble.rgba16.png
-actors/bubble/mr_i_bubble.rgba16.png
+# actors/bubble/mr_i_bubble.rgba16.png
 actors/bullet_bill/bullet_bill_eye.rgba16.png
 actors/bullet_bill/bullet_bill_mouth.rgba16.png
 actors/bully/bully_eye.rgba16.png
@@ -338,12 +338,12 @@ actors/monty_mole/monty_mole_eye.rgba16.png
 actors/monty_mole/monty_mole_nose.rgba16.png
 actors/monty_mole/monty_mole_tooth.rgba16.png
 actors/monty_mole_hole/monty_mole_hole.ia16.png
-actors/mr_i_eyeball/mr_i_eyeball_left_side.rgba16.png
-actors/mr_i_eyeball/mr_i_eyeball_right_side.rgba16.png
-actors/mr_i_iris/mr_i_iris_closed.rgba16.png
-actors/mr_i_iris/mr_i_iris_mostly_closed.rgba16.png
-actors/mr_i_iris/mr_i_iris_mostly_open.rgba16.png
-actors/mr_i_iris/mr_i_iris_open.rgba16.png
+# actors/mr_i_eyeball/mr_i_eyeball_left_side.rgba16.png
+# actors/mr_i_eyeball/mr_i_eyeball_right_side.rgba16.png
+# actors/mr_i_iris/mr_i_iris_closed.rgba16.png
+# actors/mr_i_iris/mr_i_iris_mostly_closed.rgba16.png
+# actors/mr_i_iris/mr_i_iris_mostly_open.rgba16.png
+# actors/mr_i_iris/mr_i_iris_open.rgba16.png
 # actors/mushroom_1up/1-up_mushroom.rgba16.png
 actors/peach/peach_chest_jewel.rgba16.png
 actors/peach/peach_crown_jewel.rgba16.png
