@@ -53,6 +53,7 @@ struct gPuppyOptions
     s16 turnAggression;
     s16 inputType;
     s16 deadzone;
+    u16 texFilter;
 };
 
 struct gPuppyStruct
