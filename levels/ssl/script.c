@@ -108,7 +108,7 @@ const LevelScript level_ssl_entry[] = {
         JUMP_LINK(script_func_local_3),
         TERRAIN(/*terrainData*/ ssl_seg7_area_1_collision),
         MACRO_OBJECTS(/*objList*/ ssl_seg7_area_1_macro_objs),
-        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0000, /*seq*/ SEQ_LEVEL_HOT),
+        SET_BACKGROUND_MUSIC(/*settingsPreset*/ 0x0000, /*seq*/ SEQ_LEVEL_DESERT),
         TERRAIN_TYPE(/*terrainType*/ TERRAIN_SAND),
     END_AREA(),
 

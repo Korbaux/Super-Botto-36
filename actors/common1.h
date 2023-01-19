@@ -156,14 +156,15 @@ extern const Collision door_seg3_collision_door[];
 
 // explosion
 extern const GeoLayout explosion_geo[];
-extern const Gfx explosion_seg3_dl_03004208[];
-extern const Gfx explosion_seg3_dl_03004298[];
-extern const Gfx explosion_seg3_dl_030042B0[];
-extern const Gfx explosion_seg3_dl_030042C8[];
-extern const Gfx explosion_seg3_dl_030042E0[];
-extern const Gfx explosion_seg3_dl_030042F8[];
-extern const Gfx explosion_seg3_dl_03004310[];
-extern const Gfx explosion_seg3_dl_03004328[];
+extern const Gfx explosion_seg3_dl_0[];
+extern const Gfx explosion_seg3_dl_1[];
+extern const Gfx explosion_seg3_dl_2[];
+extern const Gfx explosion_seg3_dl_3[];
+extern const Gfx explosion_seg3_dl_4[];
+extern const Gfx explosion_seg3_dl_5[];
+extern const Gfx explosion_seg3_dl_6[];
+extern const Gfx explosion_seg3_dl_7[];
+extern const Gfx explosion_seg3_dl_8[];
 
 // flame
 extern const GeoLayout red_flame_shadow_geo[];

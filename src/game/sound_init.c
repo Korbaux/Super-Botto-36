@@ -128,19 +128,19 @@ void disable_background_sound(void) {
  */
 const char* seqNames[SEQ_COUNT] = {
 	// probably a really dumb solution to have a bunch of null strings for ones that shouldn't be displayed but whatever
-	"", // SEQ_SOUND_PLAYER,                 // 0x00
+	"d", // SEQ_SOUND_PLAYER,                 // 0x00
 	"", // SEQ_EVENT_CUTSCENE_COLLECT_STAR,  // 0x01
 	"", // SEQ_MENU_TITLE_SCREEN,            // 0x02
 	"Main Menu (Hotel Mario)", // SEQ_LEVEL_GRASS, // 0x03
 	"Save Hut (Kirby Super Star)", // SEQ_LEVEL_INSIDE_CASTLE, // 0x04
 	"Trance Logic", // SEQ_LEVEL_WATER,      // 0x05
-	"", // SEQ_LEVEL_HOT,                    // 0x06
+	"DX3A108.A", // SEQ_LEVEL_HOT,           // 0x06
 	"", // SEQ_LEVEL_BOSS_KOOPA,             // 0x07
-	"", // SEQ_LEVEL_SNOW,                   // 0x08
+	"please dont wake me up", // SEQ_LEVEL_SNOW,                   // 0x08
 	"Mr. Brightside", // SEQ_LEVEL_SLIDE,    // 0x09
 	"Moonlight Sonata (1st Movement)", // SEQ_LEVEL_SPOOKY, // 0x0A
 	"", // SEQ_EVENT_PIRANHA_PLANT,          // 0x0B
-	"Billie Jean", // SEQ_LEVEL_UNDERGROUND, // 0x0C
+	"hypnopompicrat", // SEQ_LEVEL_UNDERGROUND, // 0x0C
 	"", // SEQ_MENU_STAR_SELECT,             // 0x0D
 	"PepsiMan", // SEQ_EVENT_POWERUP,        // 0x0E
 	"Targets! (SSBM)", // SEQ_EVENT_METAL_CAP, // 0x0F
@@ -163,26 +163,27 @@ const char* seqNames[SEQ_COUNT] = {
 	"", // SEQ_EVENT_CUTSCENE_ENDING,        // 0x20
 	"Two Trucks", // SEQ_MENU_FILE_SELECT,   // 0x21
 	"", // SEQ_EVENT_CUTSCENE_LAKITU,        // 0x22 (not in JP)
+    "thepresentisdreadfullyperpetual", // SEQ_LEVEL_DESERT, // 0x23
 };
 
 const char* seqAuthors[SEQ_COUNT] = {
 	// probably a really dumb solution to have a bunch of null strings for ones that shouldn't be displayed but whatever
-	"", // SEQ_SOUND_PLAYER,                 // 0x00
+	"the_pau", // SEQ_SOUND_PLAYER,                 // 0x00
 	"", // SEQ_EVENT_CUTSCENE_COLLECT_STAR,  // 0x01
 	"", // SEQ_MENU_TITLE_SCREEN,            // 0x02
 	"Max Steiner", // SEQ_LEVEL_GRASS,       // 0x03
 	"Exact Person Unknown", // SEQ_LEVEL_INSIDE_CASTLE, // 0x04
 	"who cares", // SEQ_LEVEL_WATER,         // 0x05
-	"", // SEQ_LEVEL_HOT,                    // 0x06
+	"the_pau", // SEQ_LEVEL_HOT,             // 0x06
 	"", // SEQ_LEVEL_BOSS_KOOPA,             // 0x07
-	"", // SEQ_LEVEL_SNOW,                   // 0x08
+	"the_pau", // SEQ_LEVEL_SNOW,            // 0x08
 	"The Killers", // SEQ_LEVEL_SLIDE,       // 0x09
-	"Beethoven", // SEQ_LEVEL_SPOOKY,                 // 0x0A
+	"Beethoven", // SEQ_LEVEL_SPOOKY,        // 0x0A
 	"", // SEQ_EVENT_PIRANHA_PLANT,          // 0x0B
-	"Michael Jackson", // SEQ_LEVEL_UNDERGROUND, // 0x0C
+	"the_pau", // SEQ_LEVEL_UNDERGROUND,     // 0x0C
 	"", // SEQ_MENU_STAR_SELECT,             // 0x0D
 	"Pepsi", // SEQ_EVENT_POWERUP,           // 0x0E
-	"Nintendo", // SEQ_EVENT_METAL_CAP, // 0x0F
+	"Nintendo", // SEQ_EVENT_METAL_CAP,      // 0x0F
 	"", // SEQ_EVENT_KOOPA_MESSAGE,          // 0x10
 	"", // SEQ_LEVEL_KOOPA_ROAD,             // 0x11
 	"", // SEQ_EVENT_HIGH_SCORE,             // 0x12
@@ -202,6 +203,7 @@ const char* seqAuthors[SEQ_COUNT] = {
 	"", // SEQ_EVENT_CUTSCENE_ENDING,        // 0x20
 	"Lemon Demon", // SEQ_MENU_FILE_SELECT,  // 0x21
 	"", // SEQ_EVENT_CUTSCENE_LAKITU,        // 0x22 (not in JP)
+    "the_pau", // SEQ_LEVEL_DESERT,          // 0x23
 
 };
 // will display if greater than 0, counts down

@@ -6,14 +6,14 @@
     "03_level_grass": ["0C_extended_bank"],
     "04_level_inside_castle": ["0C_extended_bank"],
     "05_level_water": ["0C_extended_bank"],
-    "06_level_hot": ["0F"],
+    "06_level_hot": ["2B_dx3a108a"],
     "07_level_boss_koopa": ["12"],
-    "08_level_snow": ["0C_extended_bank"],
+    "08_level_snow": ["28_pleasedontwakemeup"],
     "09_level_slide": ["0D"],
     "0A_level_spooky": ["0C_extended_bank", "21"],
     "0B_event_piranha_plant": ["14_piranha_music_box"],
-    "0C_level_underground": ["25"],
-    "0D_menu_star_select": ["0C_extended_bank"],
+    "0C_level_underground": ["29_hypnopompicrat"],
+    "0D_menu_star_select": ["27_HK"],
     "0E_event_powerup": ["0C_extended_bank"],
     "0F_event_metal_cap": ["0C_extended_bank"],
     "10_event_koopa_message": ["12"],
@@ -34,5 +34,6 @@
     "1F_cutscene_victory": ["1A"],
     "20_cutscene_ending": ["23"],
     "21_menu_file_select": ["24"],
-    "22_cutscene_lakitu": {"ifdef": ["VERSION_US", "VERSION_EU", "VERSION_SH"], "banks": ["1B"]}
+    "22_cutscene_lakitu": {"ifdef": ["VERSION_US", "VERSION_EU", "VERSION_SH"], "banks": ["1B"]},
+    "23_level_desert": ["2A_thepresentisperpetual"]
 }
