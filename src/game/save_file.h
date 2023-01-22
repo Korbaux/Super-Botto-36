@@ -67,6 +67,7 @@ struct MainMenuSaveData {
 #ifdef WIDE
     u8 wideMode: 1;
 #endif
+    u8 winterMode;
 //    s32 saveFoV;
 #ifdef REONUCAM
     u8 cameraSpeedSetting: 3;
@@ -203,6 +204,8 @@ u32 save_file_get_sound_mode(void);
 #ifdef WIDE
 u32 save_file_get_widescreen_mode(void);
 void save_file_set_widescreen_mode(u8 mode);
+u32 save_file_get_wintermute_mode(void);
+void save_file_set_wintermute_mode(u8 mode);
 //s16 save_file_get_fov(void);
 //void save_file_set_fov(s16 mode);
 #endif

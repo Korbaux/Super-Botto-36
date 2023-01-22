@@ -305,4 +305,6 @@ extern const Collision wooden_signpost_seg3_collision_0302DD80[];
 
 #include "transparent_star/geo_header.h"
 
+#include "mario_cap/geo_header.h"
+
 #endif

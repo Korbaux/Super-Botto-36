@@ -29,6 +29,7 @@ struct Config {
 #ifdef WIDE
     s16 widescreen;
 #endif
+    s16 wintermute;
     u8 tvType;
 };
 

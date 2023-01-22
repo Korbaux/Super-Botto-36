@@ -115,7 +115,7 @@ const Gfx init_rdp[] = {
 
     gsDPSetTextureLOD(G_TL_TILE),
     gsDPSetTextureLUT(G_TT_NONE),
-    gsDPSetTextureDetail( G_TD_CLAMP),
+    gsDPSetTextureDetail( G_TD_DETAIL),
     gsDPSetTexturePersp(G_TP_PERSP),
     gsDPSetTextureFilter( G_TF_BILERP),
     gsDPSetTextureConvert(G_TC_FILT),

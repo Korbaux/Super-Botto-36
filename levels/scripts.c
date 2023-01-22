@@ -66,6 +66,7 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_RAW_WITH_CODE( /*seg*/ SEGMENT_BEHAVIOR_DATA,    _behaviorSegmentRomStart,     _behaviorSegmentRomEnd,   _behaviorSegmentBssStart,     _behaviorSegmentBssEnd),
     ALLOC_LEVEL_POOL(),
     LOAD_MODEL_FROM_GEO(MODEL_MARIO,                   mario_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_WINTERMUTE,              wintermute_geo),
     LOAD_MODEL_FROM_GEO(MODEL_SMOKE,                   smoke_geo),
     LOAD_MODEL_FROM_GEO(MODEL_SPARKLES,                sparkles_geo),
     LOAD_MODEL_FROM_GEO(MODEL_BUBBLE,                  bubble_geo),
@@ -195,7 +196,7 @@ const LevelScript script_func_global_1[] = {
     LOAD_MODEL_FROM_GEO(MODEL_HEART,                   heart_geo),
     LOAD_MODEL_FROM_GEO(MODEL_FLYGUY,                  flyguy_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CHUCKYA,                 chuckya_geo),
-    LOAD_MODEL_FROM_GEO(MODEL_TRAJECTORY_MARKER_BALL,      bowling_ball_track_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_TRAJECTORY_MARKER_BALL,  bowling_ball_track_geo),
     RETURN(),
 };
 
@@ -267,7 +268,7 @@ const LevelScript script_func_global_9[] = {
 
 const LevelScript script_func_global_10[] = {
     LOAD_MODEL_FROM_GEO(MODEL_BOO,                     boo_geo),
-    LOAD_MODEL_FROM_GEO(MODEL_BETA_BOO_KEY,               small_key_geo),
+    LOAD_MODEL_FROM_GEO(MODEL_BETA_BOO_KEY,            small_key_geo),
     LOAD_MODEL_FROM_GEO(MODEL_HAUNTED_CHAIR,           haunted_chair_geo),
     LOAD_MODEL_FROM_GEO(MODEL_MAD_PIANO,               mad_piano_geo),
     LOAD_MODEL_FROM_GEO(MODEL_BOOKEND_PART,            bookend_part_geo),

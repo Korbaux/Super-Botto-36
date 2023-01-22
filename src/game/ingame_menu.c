@@ -42,8 +42,10 @@ s8 gRedCoinsCollected;
 #if defined(WIDE) && !defined(PUPPYCAM)
 u8 textCurrRatio43[] = { TEXT_HUD_CURRENT_RATIO_43 };
 u8 textCurrRatio169[] = { TEXT_HUD_CURRENT_RATIO_169 };
-u8 textPressL[] = { TEXT_HUD_PRESS_L };
 #endif
+u8 textPressL[] = { TEXT_HUD_PRESS_L };
+u8 textBotto[] = { TEXT_HUD_BOTTO };
+u8 textWintermute[] = { TEXT_HUD_WINTERMUTE };
 
 #if MULTILANG
 #define seg2_course_name_table course_name_table_eu_en
@@ -97,9 +99,9 @@ enum DialogBoxType {
 
 u8 gDialogCharWidths[256] = { // TODO: Is there a way to auto generate this?
     7,  7,  7,  7,  7,  7,  7,  7,  7,  7,  6,  6,  6,  6,  6,  6,
-    6,  6,  5,  6,  6,  5,  8,  8,  6,  6,  6,  6,  6,  5,  6,  6,
-    8,  7,  6,  6,  6,  5,  5,  6,  5,  5,  6,  5,  4,  5,  5,  3,
-    7,  5,  5,  5,  6,  5,  5,  5,  5,  5,  7,  7,  5,  5,  4,  4,
+    6,  6,  4,  6,  6,  5,  8,  8,  6,  6,  6,  6,  6,  5,  6,  6,
+    8,  7,  6,  6,  6,  5,  5,  6,  5,  5,  6,  5,  2,  5,  5,  1,
+    7,  5,  5,  5,  6,  5,  5,  4,  5,  5,  7,  7,  5,  5,  4,  4,
     8,  6,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
     8,  8,  8,  8,  7,  7,  6,  7,  7,  0,  0,  0,  0,  0,  0,  0,
 #ifdef VERSION_EU
@@ -123,7 +125,7 @@ u8 gDialogCharWidths[256] = { // TODO: Is there a way to auto generate this?
 #else
     7,  5, 10,  5,  9,  8,  4,  0,  0,  0,  0,  0,  0,  0,  0,  0,
 #endif
-    0,  0,  5,  7,  7,  6,  6,  8,  0,  8, 10,  6,  4, 10,  0,  0
+    0,  0,  3,  7,  7,  6,  6,  8,  0,  8, 10,  6,  4, 10,  0,  0
 };
 
 s8 gDialogBoxState = DIALOG_STATE_OPENING;
@@ -1324,7 +1326,7 @@ void do_cutscene_handler(void) {
     if (gCutsceneMsgIndex == -1) {
         return;
     }
-    
+
     create_dl_ortho_matrix();
 
     gSPDisplayList(gDisplayListHead++, dl_ia_text_begin);
@@ -1574,6 +1576,23 @@ void render_pause_red_coins(void) {
 }
 
 /// By default, not needed as puppycamera has an option, but should you wish to revert that, you are legally allowed.
+
+void render_wintermute_setting(void) {
+    gSPDisplayList(gDisplayListHead++, dl_ia_text_begin);
+    gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, gDialogTextAlpha);
+    if (save_file_get_wintermute_mode() == 0) {
+        print_generic_string(10, 20, textBotto);
+        print_generic_string(10,  7, textPressL);
+    } else {
+        print_generic_string(10, 20, textWintermute);
+        print_generic_string(10,  7, textPressL);
+    }
+    gSPDisplayList(gDisplayListHead++, dl_ia_text_end);
+    if (gPlayer1Controller->buttonPressed & L_TRIG){
+        gConfig.wintermute ^= 1;
+        save_file_set_wintermute_mode(gConfig.wintermute);
+    }
+}
 
 #if defined(WIDE) && !defined(PUPPYCAM)
 void render_widescreen_setting(void) {
@@ -1926,16 +1945,16 @@ s32 render_pause_courses_and_castle(void) {
             shade_screen();
             render_pause_my_score_coins();
             render_pause_red_coins();
-#ifndef DISABLE_EXIT_COURSE
-#ifdef EXIT_COURSE_WHILE_MOVING
-            if ((gMarioStates[0].action & (ACT_FLAG_SWIMMING | ACT_FLAG_METAL_WATER | ACT_FLAG_PAUSE_EXIT))
-             || (gMarioStates[0].pos[1] <= gMarioStates[0].floorHeight)) {
-#else
-            if (gMarioStates[0].action & ACT_FLAG_PAUSE_EXIT) {
-#endif
+// #ifndef DISABLE_EXIT_COURSE
+// #ifdef EXIT_COURSE_WHILE_MOVING
+//             if ((gMarioStates[0].action & (ACT_FLAG_SWIMMING | ACT_FLAG_METAL_WATER | ACT_FLAG_PAUSE_EXIT))
+//              || (gMarioStates[0].pos[1] <= gMarioStates[0].floorHeight)) {
+// #else
+//             if (gMarioStates[0].action & ACT_FLAG_PAUSE_EXIT) {
+// #endif
                 render_pause_course_options(99, 93, &gDialogLineNum, 15);
-            }
-#endif
+//             }
+// #endif
 
             if (gPlayer3Controller->buttonPressed & (A_BUTTON | START_BUTTON)) {
                 level_set_transition(0, NULL);
@@ -1969,6 +1988,7 @@ s32 render_pause_courses_and_castle(void) {
             }
             break;
     }
+        render_wintermute_setting();
 #if defined(WIDE) && !defined(PUPPYCAM)
         render_widescreen_setting();
 #endif

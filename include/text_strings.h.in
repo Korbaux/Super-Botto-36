@@ -90,8 +90,10 @@
 #if defined(WIDE) && !defined(PUPPYCAM)
 #define TEXT_HUD_CURRENT_RATIO_43 _("ASPECT RATIO: 4:3")
 #define TEXT_HUD_CURRENT_RATIO_169 _("ASPECT RATIO: 16:9")
-#define TEXT_HUD_PRESS_L _("PRESS L TO SWITCH")
 #endif
+#define TEXT_HUD_PRESS_L _("PRESS L TO SWITCH")
+#define TEXT_HUD_BOTTO _("BOTTO")
+#define TEXT_HUD_WINTERMUTE _("WINTERMUTE")
 
 //Reonucam
 #ifdef REONUCAM

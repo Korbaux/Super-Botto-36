@@ -72,63 +72,13 @@ static u32 sMenuSoundsExtra[] = {
     SOUND_AIR_BLOW_FIRE,
     SOUND_ENV_ELEVATOR4,
 };
-static s8 sPaintingEjectSoundPlayed = FALSE;
-
-void play_menu_sounds_extra(s32 a, void *b);
-
-/**
- * Called from threads: thread5_game_loop
- */
-void reset_volume(void) {
-    sMusicVolume = 0;
-}
-
-/**
- * Called from threads: thread5_game_loop
- */
-void lower_background_noise(s32 a) {
-    switch (a) {
-        case 1:
-            set_audio_muted(TRUE);
-            break;
-        case 2:
-            seq_player_lower_volume(SEQ_PLAYER_LEVEL, 60, 40);
-            break;
-    }
-    sMusicVolume |= a;
-}
-
-/**
- * Called from threads: thread5_game_loop
- */
-void raise_background_noise(s32 a) {
-    switch (a) {
-        case 1:
-            set_audio_muted(FALSE);
-            break;
-        case 2:
-            seq_player_unlower_volume(SEQ_PLAYER_LEVEL, 60);
-            break;
-    }
-    sMusicVolume &= ~a;
-}
-
-/**
- * Called from threads: thread5_game_loop
- */
-void disable_background_sound(void) {
-    if (sBgMusicDisabled == FALSE) {
-        sBgMusicDisabled = TRUE;
-        sound_banks_disable(SEQ_PLAYER_SFX, SOUND_BANKS_BACKGROUND);
-    }
-}
 
 /*
  * HAS TO BE UPDATED EVERY TIME A NEW SEQUENCE IS ADDED
  */
 const char* seqNames[SEQ_COUNT] = {
 	// probably a really dumb solution to have a bunch of null strings for ones that shouldn't be displayed but whatever
-	"d", // SEQ_SOUND_PLAYER,                 // 0x00
+	"", // SEQ_SOUND_PLAYER,                 // 0x00
 	"", // SEQ_EVENT_CUTSCENE_COLLECT_STAR,  // 0x01
 	"", // SEQ_MENU_TITLE_SCREEN,            // 0x02
 	"Main Menu (Hotel Mario)", // SEQ_LEVEL_GRASS, // 0x03
@@ -168,7 +118,7 @@ const char* seqNames[SEQ_COUNT] = {
 
 const char* seqAuthors[SEQ_COUNT] = {
 	// probably a really dumb solution to have a bunch of null strings for ones that shouldn't be displayed but whatever
-	"the_pau", // SEQ_SOUND_PLAYER,                 // 0x00
+	"", // SEQ_SOUND_PLAYER,                 // 0x00
 	"", // SEQ_EVENT_CUTSCENE_COLLECT_STAR,  // 0x01
 	"", // SEQ_MENU_TITLE_SCREEN,            // 0x02
 	"Max Steiner", // SEQ_LEVEL_GRASS,       // 0x03
@@ -257,6 +207,56 @@ void draw_song_name(void) {
 	}
 
 	return;
+}
+static s8 sPaintingEjectSoundPlayed = FALSE;
+
+void play_menu_sounds_extra(s32 a, void *b);
+
+/**
+ * Called from threads: thread5_game_loop
+ */
+void reset_volume(void) {
+    sMusicVolume = 0;
+}
+
+/**
+ * Called from threads: thread5_game_loop
+ */
+void lower_background_noise(s32 a) {
+    switch (a) {
+        case 1:
+            set_audio_muted(TRUE);
+            break;
+        case 2:
+            seq_player_lower_volume(SEQ_PLAYER_LEVEL, 60, 40);
+            break;
+    }
+    sMusicVolume |= a;
+}
+
+/**
+ * Called from threads: thread5_game_loop
+ */
+void raise_background_noise(s32 a) {
+    switch (a) {
+        case 1:
+            set_audio_muted(FALSE);
+            break;
+        case 2:
+            seq_player_unlower_volume(SEQ_PLAYER_LEVEL, 60);
+            break;
+    }
+    sMusicVolume &= ~a;
+}
+
+/**
+ * Called from threads: thread5_game_loop
+ */
+void disable_background_sound(void) {
+    if (sBgMusicDisabled == FALSE) {
+        sBgMusicDisabled = TRUE;
+        sound_banks_disable(SEQ_PLAYER_SFX, SOUND_BANKS_BACKGROUND);
+    }
 }
 
 /**

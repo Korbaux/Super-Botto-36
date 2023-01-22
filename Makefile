@@ -583,7 +583,7 @@ test-pj64: $(ROM)
 # someone2639
 patch: $(ROM)
 	$(info Creating BPS patch...) \
-	./flips-linux $(ROM) baserom.us.z64 botto.bps
+	./flips-linux baserom.us.z64 $(ROM) botto.bps
 load: $(ROM)
 	$(LOADER) $(LOADER_FLAGS) $<
 

@@ -710,6 +710,17 @@ void save_file_set_widescreen_mode(u8 mode) {
 }
 #endif
 
+u32 save_file_get_wintermute_mode(void) {
+    return gSaveBuffer.menuData.winterMode;
+}
+
+void save_file_set_wintermute_mode(u8 mode) {
+    gSaveBuffer.menuData.winterMode = mode;
+
+    gMainMenuDataModified = TRUE;
+    save_main_menu_data();
+}
+
 u32 save_file_get_sound_mode(void) {
     return gSaveBuffer.menuData.soundMode;
 }
