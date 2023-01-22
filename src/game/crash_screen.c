@@ -96,7 +96,7 @@ void crash_screen_draw_rect(s32 x, s32 y, s32 w, s32 h) {
     for (i = 0; i < h; i++) {
         for (j = 0; j < w; j++) {
             // 0xe738 = 0b1110011100111000
-            *ptr = ((*ptr & 0xe738) >> 2) | 1;
+            *ptr = ((*ptr & 0xA82A)) | 1;
             ptr++;
         }
         ptr += gCrashScreen.width - w;
@@ -118,7 +118,7 @@ void crash_screen_draw_glyph(s32 x, s32 y, s32 glyph) {
         rowMask = *data++;
 
         for (j = 0; j < 6; j++) {
-            *ptr++ = (bit & rowMask) ? 0xffff : 1;
+            *ptr++ = (bit & rowMask) ? 0xffff : 0xA82A;
             bit >>= 1;
         }
         ptr += gCrashScreen.width - 6;
@@ -358,7 +358,7 @@ void draw_crash_screen(OSThread *thread) {
     }
     if (updateBuffer) {
         crash_screen_draw_rect(25, 8, 270, 12);
-        crash_screen_print(30, 10, "Page:%02d                L/Z: Left   R: Right", crashPage);
+        crash_screen_print(30, 10, "Page:%02d Bad at C! Bad at C! L/R: Turn Page", crashPage);
         switch (crashPage) {
             case PAGE_CONTEXT:    draw_crash_context(thread, cause); break;
 #if PUPPYPRINT_DEBUG
@@ -405,6 +405,11 @@ void thread2_crash_screen(UNUSED void *arg) {
         if (thread == NULL) {
             osRecvMesg(&gCrashScreen.mesgQueue, &mesg, 1);
             thread = get_crashed_thread();
+            RGBA16 bluescreen[SCREEN_WIDTH * SCREEN_HEIGHT];
+            int i;
+            for (i = 0; i <= SCREEN_WIDTH * SCREEN_HEIGHT; i++) {
+                gFramebuffers[sRenderedFramebuffer][i] = 0xA82A;
+            }
             gCrashScreen.framebuffer = (RGBA16 *) gFramebuffers[sRenderedFramebuffer];
             if (thread) {
                 if ((u32) map_data_init != MAP_PARSER_ADDRESS) {
@@ -434,7 +439,7 @@ void thread2_crash_screen(UNUSED void *arg) {
 }
 
 void crash_screen_init(void) {
-    gCrashScreen.framebuffer = (RGBA16 *) gFramebuffers[sRenderedFramebuffer];
+    gCrashScreen.framebuffer = ((RGBA16) 0xA82A);
     gCrashScreen.width = SCREEN_WIDTH;
     gCrashScreen.height = SCREEN_HEIGHT;
     osCreateMesgQueue(&gCrashScreen.mesgQueue, &gCrashScreen.mesg, 1);
