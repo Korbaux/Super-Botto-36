@@ -3,7 +3,7 @@ const GeoLayout number_geo[] = {
    GEO_NODE_START(),
    GEO_OPEN_NODE(),
 #ifdef DIALOG_INDICATOR
-      GEO_SWITCH_CASE(16, geo_switch_anim_state),
+      GEO_SWITCH_CASE(17, geo_switch_anim_state),
 #else
       GEO_SWITCH_CASE(10, geo_switch_anim_state),
 #endif
@@ -25,6 +25,7 @@ const GeoLayout number_geo[] = {
          GEO_DISPLAY_LIST(LAYER_OCCLUDE_SILHOUETTE_ALPHA, dl_billboard_num_D),
          GEO_DISPLAY_LIST(LAYER_OCCLUDE_SILHOUETTE_ALPHA, dl_billboard_num_E),
          GEO_DISPLAY_LIST(LAYER_OCCLUDE_SILHOUETTE_ALPHA, dl_billboard_num_F),
+         GEO_DISPLAY_LIST(LAYER_OCCLUDE_SILHOUETTE_ALPHA, dl_billboard_A_button),
 #endif
       GEO_CLOSE_NODE(),
    GEO_CLOSE_NODE(),

@@ -79,8 +79,8 @@ const LevelScript level_main_menu_entry_act_select[] = {
         CALL(/*arg*/ 0, /*func*/ lvl_init_act_selector_values_and_stars),
 #endif
     /*27*/ TRANSITION(/*transType*/ WARP_TRANSITION_FADE_FROM_COLOR, /*time*/ 16, /*color*/ 0xFF, 0xFF, 0xFF),
-    /*29*/ SLEEP(/*frames*/ 16),
     /*30*/ SET_MENU_MUSIC(/*seq*/ 0x000D),
+    /*29*/ SLEEP(/*frames*/ 16),
 #ifndef NO_SEGMENTED_MEMORY
     /*31*/ CALL(     /*arg*/ 0, /*func*/ lvl_init_act_selector_values_and_stars),
 #endif
