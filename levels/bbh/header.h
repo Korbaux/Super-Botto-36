@@ -2,6 +2,7 @@
 #define BBH_HEADER_H
 
 #include "types.h"
+#include "textures.h"
 #include "game/moving_texture.h"
 
 // geo
