@@ -29,6 +29,8 @@
 #include "sparkle_animation/model.inc.c"
 
 #ifdef S2DEX_TEXT_ENGINE
-#include "src/s2d_engine/config.h"
+#include "src/s2dex_text_engine/config.h"
 #include FONT_C_FILE
 #endif
+
+#include "dialog.box"

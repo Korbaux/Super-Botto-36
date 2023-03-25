@@ -7,7 +7,7 @@
 #define SCRAM "get lost"
 #else
 #define COMRADES "comrades"
-#define PLASTERED "plastered"
+#define PLASTERED "splattered"
 #define SCAM_ME "scam\nME. "
 #define SCRAM "scram--"
 #endif
@@ -337,10 +337,10 @@ DEFINE_DIALOG(DIALOG_030, 1, 6, 30, 200, _("\
 Hello! The Lakitu Bros.,\n\
 cutting in with a live\n\
 update on Botto's\n\
-progress. He's about to\n\
+progress. She's about to\n\
 learn a technique for\n\
 sneaking up on enemies.\n\
-The trick is this: He has\n\
+The trick is this: She has\n\
 to walk very slowly in\n\
 order to walk quietly.\n\
 \n\
@@ -408,7 +408,7 @@ castle.\n\
 Botto has just arrived\n\
 on the scene, and we'll\n\
 be filming the action live\n\
-as he enters the castle\n\
+as she enters the castle\n\
 and pursues the missing\n\
 Power Stars.\n\
 As seasoned cameramen,\n\
@@ -448,7 +448,7 @@ You can change angles by\n\
 pressing [C]>. If you press\n\
 [R], the view switches to\n\
 Botto's camera, which\n\
-is directly behind him.\n\
+is directly behind her.\n\
 Press [R] again to return\n\
 to Lakitu's camera. Press\n\
 [C]| to see Botto from\n\

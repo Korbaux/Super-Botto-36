@@ -1387,7 +1387,7 @@ textures/fire/lll_textures.07000.rgba16.png
 textures/fire/lll_textures.07800.rgba16.png
 textures/fire/lll_textures.08000.rgba16.png
 textures/fire/lll_textures.08800.rgba16.png
-textures/fire/lll_textures.09000.rgba16.png
+# textures/fire/lll_textures.09000.rgba16.png
 textures/fire/lll_textures.09800.rgba16.png
 textures/fire/lll_textures.0A000.rgba16.png
 textures/fire/lll_textures.0A800.rgba16.png
@@ -2026,11 +2026,11 @@ textures/segment2/segment2.07B10.ia1.png
 textures/segment2/segment2.07B20.ia1.png
 textures/segment2/segment2.07B30.ia1.png
 textures/segment2/segment2.07B40.ia1.png
-textures/segment2/segment2.07B50.rgba16.png
-textures/segment2/segment2.07D50.rgba16.png
-textures/segment2/segment2.07F50.rgba16.png
-textures/segment2/segment2.08150.rgba16.png
-textures/segment2/segment2.081D0.rgba16.png
+# textures/segment2/segment2.07B50.rgba16.png
+# textures/segment2/segment2.07D50.rgba16.png
+# textures/segment2/segment2.07F50.rgba16.png
+# textures/segment2/segment2.08150.rgba16.png
+# textures/segment2/segment2.081D0.rgba16.png
 textures/segment2/segment2.0F458.ia8.png
 textures/segment2/segment2.0FC58.ia8.png
 # textures/segment2/segment2.10458.ia8.png
@@ -2039,7 +2039,7 @@ textures/segment2/segment2.11C58.rgba16.png
 textures/segment2/segment2.12458.rgba16.png
 textures/segment2/segment2.12C58.rgba16.png
 textures/segment2/segment2.13458.ia16.png
-textures/segment2/segment2.13C58.rgba16.png
+# textures/segment2/segment2.13C58.rgba16.png
 textures/segment2/segment2.14838.ia8.png
 textures/segment2/segment2.umlaut.rgba16.png
 textures/segment2/shadow_quarter_circle.ia8.png
