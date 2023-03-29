@@ -1,0 +1,85 @@
+Building tools...
+Building ROM...
+[0;32mLinking Preliminary ELF file:  [0;34mbuild/us_n64/sm64_prelim.elf [0m
+build/us_n64/src/newtext/newtext_parser.o: In function `NT_StrLen':
+(.text.NT_StrLen+0x0): multiple definition of `NT_StrLen'
+build/us_n64/src/newtext/newtext_parser.o:(.text.NT_StrLen+0x0): first defined here
+build/us_n64/src/newtext/newtext_parser.o: In function `NT_StartWarp':
+(.text.NT_StartWarp+0x0): multiple definition of `NT_StartWarp'
+build/us_n64/src/newtext/newtext_parser.o:(.text.NT_StartWarp+0x0): first defined here
+build/us_n64/src/newtext/newtext_parser.o:(.data.NewText_BufferWarpNode+0x0): multiple definition of `NewText_BufferWarpNode'
+build/us_n64/src/newtext/newtext_parser.o:(.data.NewText_BufferWarpNode+0x0): first defined here
+build/us_n64/src/newtext/newtext_parser.o: In function `NT_ReadController':
+(.text.NT_ReadController+0x0): multiple definition of `NT_ReadController'
+build/us_n64/src/newtext/newtext_parser.o:(.text.NT_ReadController+0x0): first defined here
+build/us_n64/src/newtext/newtext_parser.o: In function `NT_ReadStick':
+(.text.NT_ReadStick+0x0): multiple definition of `NT_ReadStick'
+build/us_n64/src/newtext/newtext_parser.o:(.text.NT_ReadStick+0x0): first defined here
+build/us_n64/src/newtext/newtext_parser.o: In function `NewText_CopyRest':
+(.text.NewText_CopyRest+0x0): multiple definition of `NewText_CopyRest'
+build/us_n64/src/newtext/newtext_parser.o:(.text.NewText_CopyRest+0x0): first defined here
+build/us_n64/src/newtext/newtext_parser.o: In function `clearrow':
+(.text.clearrow+0x0): multiple definition of `clearrow'
+build/us_n64/src/newtext/newtext_parser.o:(.text.clearrow+0x0): first defined here
+build/us_n64/src/newtext/newtext_parser.o: In function `str_repl_space_w_color':
+(.text.str_repl_space_w_color+0x0): multiple definition of `str_repl_space_w_color'
+build/us_n64/src/newtext/newtext_parser.o:(.text.str_repl_space_w_color+0x0): first defined here
+build/us_n64/src/newtext/newtext_parser.o: In function `flipcase':
+(.text.flipcase+0x0): multiple definition of `flipcase'
+build/us_n64/src/newtext/newtext_parser.o:(.text.flipcase+0x0): first defined here
+build/us_n64/src/newtext/newtext_parser.o: In function `NewText_Keyboard':
+(.text.NewText_Keyboard+0x0): multiple definition of `NewText_Keyboard'
+build/us_n64/src/newtext/newtext_parser.o:(.text.NewText_Keyboard+0x0): first defined here
+build/us_n64/src/newtext/newtext_parser.o: In function `NewText_RenderText':
+(.text.NewText_RenderText+0x0): multiple definition of `NewText_RenderText'
+build/us_n64/src/newtext/newtext_parser.o:(.text.NewText_RenderText+0x0): first defined here
+build/us_n64/src/newtext/newtext_parser.o: In function `NewText_SayFull':
+(.text.NewText_SayFull+0x0): multiple definition of `NewText_SayFull'
+build/us_n64/src/newtext/newtext_parser.o:(.text.NewText_SayFull+0x0): first defined here
+build/us_n64/src/newtext/newtext_parser.o: In function `NT_KeepText':
+(.text.NT_KeepText+0x0): multiple definition of `NT_KeepText'
+build/us_n64/src/newtext/newtext_parser.o:(.text.NT_KeepText+0x0): first defined here
+build/us_n64/src/newtext/newtext_parser.o: In function `NT_DrawTextBox':
+(.text.NT_DrawTextBox+0x0): multiple definition of `NT_DrawTextBox'
+build/us_n64/src/newtext/newtext_parser.o:(.text.NT_DrawTextBox+0x0): first defined here
+build/us_n64/src/newtext/newtext_parser.o:(.data.sprite_bg+0x0): multiple definition of `sprite_bg'
+build/us_n64/src/newtext/newtext_parser.o:(.data.sprite_bg+0x0): first defined here
+build/us_n64/src/newtext/newtext_parser.o:(.data.sprite_bg_dl+0x0): multiple definition of `sprite_bg_dl'
+build/us_n64/src/newtext/newtext_parser.o:(.data.sprite_bg_dl+0x0): first defined here
+build/us_n64/src/newtext/newtext_parser.o: In function `NT_RenderMenu':
+(.text.NT_RenderMenu+0x0): multiple definition of `NT_RenderMenu'
+build/us_n64/src/newtext/newtext_parser.o:(.text.NT_RenderMenu+0x0): first defined here
+build/us_n64/src/newtext/newtext_parser.o:(.data.NewText_CurrentColor+0x0): multiple definition of `NewText_CurrentColor'
+build/us_n64/src/newtext/newtext_parser.o:(.data.NewText_CurrentColor+0x0): first defined here
+build/us_n64/src/newtext/newtext_parser.o: In function `NewText_Compare':
+(.text.NewText_Compare+0x0): multiple definition of `NewText_Compare'
+build/us_n64/src/newtext/newtext_parser.o:(.text.NewText_Compare+0x0): first defined here
+build/us_n64/src/newtext/newtext_parser.o: In function `NewText_Parse':
+(.text.NewText_Parse+0x0): multiple definition of `NewText_Parse'
+build/us_n64/src/newtext/newtext_parser.o:(.text.NewText_Parse+0x0): first defined here
+build/us_n64/src/newtext/newtext_parser.o:(.data.NewText_DrawingTB+0x0): multiple definition of `NewText_DrawingTB'
+build/us_n64/src/newtext/newtext_parser.o:(.data.NewText_DrawingTB+0x0): first defined here
+build/us_n64/src/newtext/newtext_parser.o:(.data.subStackPtr+0x0): multiple definition of `subStackPtr'
+build/us_n64/src/newtext/newtext_parser.o:(.data.subStackPtr+0x0): first defined here
+build/us_n64/src/newtext/newtext_parser.o:(.data.NewText_CurAlign+0x0): multiple definition of `NewText_CurAlign'
+build/us_n64/src/newtext/newtext_parser.o:(.data.NewText_CurAlign+0x0): first defined here
+build/us_n64/src/newtext/newtext_parser.o:(.data.sprite_init_dl+0x0): multiple definition of `sprite_init_dl'
+build/us_n64/src/newtext/newtext_parser.o:(.data.sprite_init_dl+0x0): first defined here
+build/us_n64/src/newtext/newtext_parser.o:(.bss.myName+0x0): multiple definition of `myName'
+build/us_n64/src/newtext/newtext_parser.o:(.bss.myName+0x0): first defined here
+`NewText_CurAlign' referenced in section `.text' of lib/libs2d_engine.a(s2d_buffer.o): defined in discarded section `.data.NewText_CurAlign' of build/us_n64/src/newtext/newtext_parser.o
+`NewText_CurAlign' referenced in section `.text' of lib/libs2d_engine.a(s2d_buffer.o): defined in discarded section `.data.NewText_CurAlign' of build/us_n64/src/newtext/newtext_parser.o
+`subStackPtr' referenced in section `.text' of lib/libs2d_engine.a(s2d_parse.o): defined in discarded section `.data.subStackPtr' of build/us_n64/src/newtext/newtext_parser.o
+`subStackPtr' referenced in section `.text' of lib/libs2d_engine.a(s2d_parse.o): defined in discarded section `.data.subStackPtr' of build/us_n64/src/newtext/newtext_parser.o
+`subStackPtr' referenced in section `.text' of lib/libs2d_engine.a(s2d_parse.o): defined in discarded section `.data.subStackPtr' of build/us_n64/src/newtext/newtext_parser.o
+`subStackPtr' referenced in section `.text' of lib/libs2d_engine.a(s2d_parse.o): defined in discarded section `.data.subStackPtr' of build/us_n64/src/newtext/newtext_parser.o
+`subStackPtr' referenced in section `.text' of lib/libs2d_engine.a(s2d_parse.o): defined in discarded section `.data.subStackPtr' of build/us_n64/src/newtext/newtext_parser.o
+`subStackPtr' referenced in section `.text' of lib/libs2d_engine.a(s2d_parse.o): defined in discarded section `.data.subStackPtr' of build/us_n64/src/newtext/newtext_parser.o
+`subStackPtr' referenced in section `.text' of lib/libs2d_engine.a(s2d_parse.o): defined in discarded section `.data.subStackPtr' of build/us_n64/src/newtext/newtext_parser.o
+`subStackPtr' referenced in section `.text' of lib/libs2d_engine.a(s2d_parse.o): defined in discarded section `.data.subStackPtr' of build/us_n64/src/newtext/newtext_parser.o
+`subStackPtr' referenced in section `.text' of lib/libs2d_engine.a(s2d_parse.o): defined in discarded section `.data.subStackPtr' of build/us_n64/src/newtext/newtext_parser.o
+`subStackPtr' referenced in section `.text' of lib/libs2d_engine.a(s2d_parse.o): defined in discarded section `.data.subStackPtr' of build/us_n64/src/newtext/newtext_parser.o
+`NewText_DrawingTB' referenced in section `.text.render_game' of build/us_n64/src/game/area.o: defined in discarded section `.data.NewText_DrawingTB' of build/us_n64/src/newtext/newtext_parser.o
+`NewText_DrawingTB' referenced in section `.text.render_game' of build/us_n64/src/game/area.o: defined in discarded section `.data.NewText_DrawingTB' of build/us_n64/src/newtext/newtext_parser.o
+`NT_DrawTextBox' referenced in section `.text.render_game' of build/us_n64/src/game/area.o: defined in discarded section `.text.NT_DrawTextBox' of build/us_n64/src/newtext/newtext_parser.o
+make: *** [Makefile:862: build/us_n64/sm64_prelim.elf] Error 1

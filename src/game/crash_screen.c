@@ -420,7 +420,7 @@ void thread2_crash_screen(UNUSED void *arg) {
                 stop_background_music(sBackgroundMusicQueue[0].seqId);
                 audio_signal_game_loop_tick();
                 crash_screen_sleep(200);
-                play_sound(SOUND_MARIO_CRASH_SCREEN, gGlobalSoundSource);
+                play_sound(SOUND_PEACH_DEAR_MARIO, gGlobalSoundSource);
                 audio_signal_game_loop_tick();
                 crash_screen_sleep(200);
                 continue;
