@@ -1439,9 +1439,9 @@ textures/grass/wf_textures.0A000.rgba16.png
 textures/grass/wf_textures.0A800.rgba16.png
 textures/grass/wf_textures.0B000.ia16.png
 textures/grass/wf_textures.0B800.ia16.png
-textures/inside/inside_castle_textures.00000.rgba16.png
+# textures/inside/inside_castle_textures.00000.rgba16.png
 textures/inside/inside_castle_textures.01000.rgba16.png
-textures/inside/inside_castle_textures.02000.rgba16.png
+# textures/inside/inside_castle_textures.02000.rgba16.png
 # textures/inside/inside_castle_textures.03000.rgba16.png
 # textures/inside/inside_castle_textures.03800.rgba16.png
 # textures/inside/inside_castle_textures.04000.rgba16.png
@@ -1451,7 +1451,7 @@ textures/inside/inside_castle_textures.02000.rgba16.png
 # textures/inside/inside_castle_textures.06000.rgba16.png
 # textures/inside/inside_castle_textures.07000.rgba16.png
 textures/inside/inside_castle_textures.08000.rgba16.png
-textures/inside/inside_castle_textures.08800.rgba16.png
+# textures/inside/inside_castle_textures.08800.rgba16.png
 # textures/inside/inside_castle_textures.09000.rgba16.png
 # textures/inside/inside_castle_textures.0A000.rgba16.png
 # textures/inside/inside_castle_textures.0B000.rgba16.png
