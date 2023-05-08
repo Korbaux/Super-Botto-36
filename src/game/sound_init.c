@@ -81,7 +81,7 @@ const char* seqNames[SEQ_COUNT] = {
 	"", // SEQ_SOUND_PLAYER,                 // 0x00
 	"", // SEQ_EVENT_CUTSCENE_COLLECT_STAR,  // 0x01
 	"", // SEQ_MENU_TITLE_SCREEN,            // 0x02
-	"Main Menu (Hotel Mario)", // SEQ_LEVEL_GRASS, // 0x03
+	"Town", // SEQ_LEVEL_GRASS, // 0x03
 	"Save Hut (Kirby Super Star)", // SEQ_LEVEL_INSIDE_CASTLE, // 0x04
 	"Trance Logic", // SEQ_LEVEL_WATER,      // 0x05
 	"DX3A108.A", // SEQ_LEVEL_HOT,           // 0x06
@@ -104,7 +104,7 @@ const char* seqNames[SEQ_COUNT] = {
 	"", // SEQ_EVENT_CUTSCENE_COLLECT_KEY,   // 0x17
 	"", // SEQ_EVENT_ENDLESS_STAIRS,         // 0x18
 	"", // SEQ_LEVEL_BOSS_KOOPA_FINAL,       // 0x19
-	"Scatman's World, BHIYS", // SEQ_EVENT_CUTSCENE_CREDITS, // 0x1A
+	"thanks for playing", // SEQ_EVENT_CUTSCENE_CREDITS, // 0x1A
 	"", // SEQ_EVENT_SOLVE_PUZZLE,           // 0x1B
 	"", // SEQ_EVENT_TOAD_MESSAGE,           // 0x1C
 	"", // SEQ_EVENT_PEACH_MESSAGE,          // 0x1D
@@ -121,9 +121,9 @@ const char* seqAuthors[SEQ_COUNT] = {
 	"", // SEQ_SOUND_PLAYER,                 // 0x00
 	"", // SEQ_EVENT_CUTSCENE_COLLECT_STAR,  // 0x01
 	"", // SEQ_MENU_TITLE_SCREEN,            // 0x02
-	"Max Steiner", // SEQ_LEVEL_GRASS,       // 0x03
+	"Nathan Grigg", // SEQ_LEVEL_GRASS,       // 0x03
 	"Exact Person Unknown", // SEQ_LEVEL_INSIDE_CASTLE, // 0x04
-	"who cares", // SEQ_LEVEL_WATER,         // 0x05
+	"Exact Person Unknown", // SEQ_LEVEL_WATER,         // 0x05
 	"the_pau", // SEQ_LEVEL_HOT,             // 0x06
 	"", // SEQ_LEVEL_BOSS_KOOPA,             // 0x07
 	"the_pau", // SEQ_LEVEL_SNOW,            // 0x08
@@ -144,7 +144,7 @@ const char* seqAuthors[SEQ_COUNT] = {
 	"", // SEQ_EVENT_CUTSCENE_COLLECT_KEY,   // 0x17
 	"", // SEQ_EVENT_ENDLESS_STAIRS,         // 0x18
 	"", // SEQ_LEVEL_BOSS_KOOPA_FINAL,       // 0x19
-	"Scatman John, TMBG", // SEQ_EVENT_CUTSCENE_CREDITS, // 0x1A
+	"Korbo", // SEQ_EVENT_CUTSCENE_CREDITS,  // 0x1A
 	"", // SEQ_EVENT_SOLVE_PUZZLE,           // 0x1B
 	"", // SEQ_EVENT_TOAD_MESSAGE,           // 0x1C
 	"", // SEQ_EVENT_PEACH_MESSAGE,          // 0x1D
