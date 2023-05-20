@@ -684,7 +684,7 @@ s32 obj_lava_death(void) {
  */
 void spawn_orange_number(s8 behParam, s16 relX, s16 relY, s16 relZ) {
 #ifdef DIALOG_INDICATOR
-    if (behParam > ORANGE_NUMBER_F) return;
+    if (behParam > ORANGE_NUMBER_B1) return;
 #else
     if (behParam > ORANGE_NUMBER_9) return;
 #endif

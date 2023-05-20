@@ -74,6 +74,7 @@ extern Gfx dl_billboard_num_D[];
 extern Gfx dl_billboard_num_E[];
 extern Gfx dl_billboard_num_F[];
 extern Gfx dl_billboard_A_button[];
+extern Gfx dl_billboard_B_button[];
 #endif
 
 #endif // SEGMENT2_H

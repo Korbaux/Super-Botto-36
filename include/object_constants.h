@@ -286,7 +286,8 @@ enum OrangeNumbers { // oBehParams2ndByte, oAnimState
     ORANGE_NUMBER_D,
     ORANGE_NUMBER_E,
     ORANGE_NUMBER_F,
-    ORANGE_BUTTON_A
+    ORANGE_NUMBER_A1,
+    ORANGE_NUMBER_B1,
 };
 
 /* Coin Type */

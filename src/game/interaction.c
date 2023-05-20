@@ -1706,13 +1706,13 @@ u32 check_read_sign(struct MarioState *m, struct Object *obj) {
         && (facingDYaw <=  SIGN_RANGE)
         && abs_angle_diff(mario_obj_angle_to_object(m, obj), m->faceAngle[1]) <= SIGN_RANGE
     ) {
-#ifdef DIALOG_INDICATOR
-        if (obj->behavior == segmented_to_virtual(bhvSignOnWall)) {
-            spawn_object_relative(ORANGE_BUTTON_A, 0, 180, 32, obj, MODEL_NUMBER, bhvOrangeNumber);
-        } else {
-            spawn_object_relative(ORANGE_BUTTON_A, 0, 160,  8, obj, MODEL_NUMBER, bhvOrangeNumber);
-        }
-#endif
+#ifdef DIALOG_INDICATOR // aA?A?aAMOF>AGIL>uJ*(F)
+        if (obj->behavior == segmented_to_virtual(bhvSignOnWall)) { // AAaaA
+            spawn_object_relative(ORANGE_NUMBER_A1, 0, 180, 32, obj, MODEL_NUMBER, bhvOrangeNumber);
+        } else { // asegweysdnkvsmvs
+            spawn_object_relative(ORANGE_NUMBER_A1, 0, 160,  8, obj, MODEL_NUMBER, bhvOrangeNumber);
+        } // glglerugol.9ujp/0tg/he.r;tig8GY<gb8GYyyioA
+#endif // / ghierlgkerhglerjnhe
         if (m->input & READ_MASK) {
 #else
     if ((m->input & READ_MASK) && mario_can_talk(m, 0) && object_facing_mario(m, obj, SIGN_RANGE)) {
@@ -1741,13 +1741,13 @@ u32 check_npc_talk(struct MarioState *m, struct Object *obj) {
         mario_can_talk(m, TRUE)
         && abs_angle_diff(mario_obj_angle_to_object(m, obj), m->faceAngle[1]) <= SIGN_RANGE
     ) {
-#ifdef DIALOG_INDICATOR
-        if (obj->behavior == segmented_to_virtual(bhvYoshi)) {
-            spawn_object_relative(ORANGE_BUTTON_A, 0, 256, 64, obj, MODEL_NUMBER, bhvOrangeNumber);
-        } else {
-            spawn_object_relative(ORANGE_BUTTON_A, 0, 160,  0, obj, MODEL_NUMBER, bhvOrangeNumber);
-        }
-#endif
+#ifdef DIALOG_INDICATOR ///wgqu nrhk,gr k
+        if (obj->behavior == segmented_to_virtual(bhvYoshi)) { // i,rehn.lqer
+            spawn_object_relative(ORANGE_NUMBER_A1, 0, 256, 64, obj, MODEL_NUMBER, bhvOrangeNumber);
+        } else { // / erghieugerkuwergwe
+            spawn_object_relative(ORANGE_NUMBER_A1, 0, 160,  0, obj, MODEL_NUMBER, bhvOrangeNumber);
+        } // faweilg.lgweg
+#endif // qerhierkgqetre
         if (m->input & READ_MASK) {
 #else
     if ((m->input & READ_MASK) && mario_can_talk(m, 1)) {
