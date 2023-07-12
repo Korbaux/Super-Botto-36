@@ -24,6 +24,7 @@
 #define NC_BUTTON2_EN 			_("[R]: Return")
 #define NC_OPTION_EN 			_("OPTIONS")
 #define OPTION_DEADZONE_EN	 		_("Deadzone")
+#define OPTION_ACIDMODE_EN	 		_("Acid Mode")
 
 #if MULTILANG
 #define NC_CAMX_FR 				_("Sensibilite sur l'axe X")
