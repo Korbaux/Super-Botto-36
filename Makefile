@@ -517,6 +517,7 @@ AIFF_EXTRACT_CODEBOOK := $(TOOLS_DIR)/aiff_extract_codebook
 VADPCM_ENC            := $(TOOLS_DIR)/vadpcm_enc
 EXTRACT_DATA_FOR_MIO  := $(TOOLS_DIR)/extract_data_for_mio
 SKYCONV               := $(TOOLS_DIR)/skyconv
+FLIPS                 := $(TOOLS_DIR)/Flips
 ifeq ($(GZIPVER),std)
 GZIP                  := gzip
 else
@@ -581,9 +582,10 @@ test: $(ROM)
 test-pj64: $(ROM)
 	wine ~/Desktop/new64/Project64.exe $<
 # someone2639
+
 patch: $(ROM)
-	$(info Creating BPS patch...) \
-	./flips-linux baserom.us.z64 $(ROM) botto.bps
+	$(FLIPS) --create --bps ./baserom.$(VERSION).z64 $(ROM) $(BUILD_DIR)/$(TARGET_STRING).bps
+
 load: $(ROM)
 	$(LOADER) $(LOADER_FLAGS) $<
 
